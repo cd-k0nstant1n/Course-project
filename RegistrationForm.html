@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="RegistrationForm.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Регистриране на акаунт</div>
+    <div class="content">
+      <form action="#">
+        <div class="chose-role">
+          <input type="radio" name="role" id="dot-1">
+          <input type="radio" name="role" id="dot-2">
+          <input type="radio" name="role" id="dot-3">
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="role">Ученик</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="role">Учител</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="role">Родител</span>
+            </label>
+          </div>
+        </div>
+         <div class="user-details">
+          <div class="input-box" hidden>
+            <span class="details">Първо име</span>
+            <input type="text" placeholder="Въведете първо име" required>
+          </div>
+          <div class="input-box" hidden>
+            <span class="details">Фамилия</span>
+            <input type="text" placeholder="Въведете фамилия" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Клас</span>
+            <input type="text" placeholder="Въведете клас" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Номер в клас </span>
+            <input type="text" placeholder="Въведете номер в клас" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Имейл</span>
+            <input type="text" placeholder="Въведете имейл" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Телефонен номер</span>
+            <input type="text" placeholder="Въведете телефон" required>
+          </div>
+          <div class="input-box" >
+            <span class="details">Парола</span>
+            <input type="text" placeholder="Въведете паролата" required>
+          </div>
+          <div class="input-box" >
+            <span class="details">Потвърждение на парола</span>
+            <input type="text" placeholder="Потвърдете парола" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Регистриране">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
