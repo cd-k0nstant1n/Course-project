@@ -9,17 +9,6 @@
       <span class="details">Фамилия</span>
       <input type="text" placeholder="Въведете фамилия" required>
     </div>
-
-    <div>  
-      <span class="details">Класен ръководител?</span> <br>
-      <input type="checkbox" onclick="javascript:yesCheak()" name="yes" id="yesCheck"> Да<br>
-    </div>
-
-    <div class="input-box" id="ifYes" style="display:none">
-      <span class="details">Класен ръководител на:</span>
-      <input type="number" placeholder="Въведете клас" id="yes" name="yes" required>
-    </div>
-
     <div class="input-box">
       <span class="details">Имейл</span>
       <input type="text" placeholder="Въведете имейл" required>
@@ -44,5 +33,15 @@
       <span class="details">Предмет по който преподавате</span>
       <input type="text" placeholder="Въведете предмет" required>
     </div>
+    
+    <div>  
+      <span class="details" style="padding-right: 120px;">Класен ръководител?</span> 
+      <input type="checkbox" class="details" onclick="javascript: yes_check()" name="yes" id="yesCheck"><br> 
+      <div class="appering_field" id="ifYes" style="display:none">
+        <!-- <span class="details">Класен ръководител на:</span>  -->
+        <input type="number" placeholder="Въведете клас" id="yes" name="yes">
+      </div>
+    </div>
+
 
   </div>
