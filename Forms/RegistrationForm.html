@@ -11,8 +11,8 @@
     <div class="content">
       <form action="#">
         <div class="chose-role">
-          <input type="radio" name="role" id="dot-1">
-          <input type="radio" name="role" id="dot-2">
+          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-1">
+          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-2">
           <input type="radio" name="role" id="dot-3">
           <div class="category">
             <label for="dot-1">
@@ -29,12 +29,12 @@
             </label>
           </div>
         </div>
-         <div class="user-details">
-          <div class="input-box" hidden>
+         <div class="user-details" id="ifChecked" style="visibility:hidden;">
+          <div class="input-box">
             <span class="details">Първо име</span>
-            <input type="text" placeholder="Въведете първо име" required>
+            <input type="text" id="yes" name="yes" placeholder="Въведете първо име" required>
           </div>
-          <div class="input-box" hidden>
+          <div class="input-box">
             <span class="details">Фамилия</span>
             <input type="text" placeholder="Въведете фамилия" required>
           </div>
@@ -69,5 +69,14 @@
       </form>
     </div>
   </div>
+  <script>
+    function roleCheck() {
+if (document.getElementById('dot-1').checked) {
+  document.getElementById('ifChecked').style.visibility = 'visible';
+}
+else document.getElementById('ifChecked').style.visibility = 'hidden';
+
+}
+  </script>
 </body>
 </html>
