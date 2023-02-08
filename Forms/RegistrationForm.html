@@ -13,7 +13,7 @@
         <div class="chose-role">
           <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-1">
           <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-2">
-          <input type="radio" name="role" id="dot-3">
+          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-3">
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
@@ -29,40 +29,10 @@
             </label>
           </div>
         </div>
-         <div class="user-details" id="ifChecked" style="visibility:hidden;">
-          <div class="input-box">
-            <span class="details">Първо име</span>
-            <input type="text" id="yes" name="yes" placeholder="Въведете първо име" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Фамилия</span>
-            <input type="text" placeholder="Въведете фамилия" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Клас</span>
-            <input type="text" placeholder="Въведете клас" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Номер в клас </span>
-            <input type="text" placeholder="Въведете номер в клас" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Имейл</span>
-            <input type="text" placeholder="Въведете имейл" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Телефонен номер</span>
-            <input type="text" placeholder="Въведете телефон" required>
-          </div>
-          <div class="input-box" >
-            <span class="details">Парола</span>
-            <input type="text" placeholder="Въведете паролата" required>
-          </div>
-          <div class="input-box" >
-            <span class="details">Потвърждение на парола</span>
-            <input type="text" placeholder="Потвърдете парола" required>
-          </div>
+        <div id="Form">
+
         </div>
+         
         <div class="button">
           <input type="submit" value="Регистриране">
         </div>
@@ -72,9 +42,13 @@
   <script>
     function roleCheck() {
 if (document.getElementById('dot-1').checked) {
-  document.getElementById('ifChecked').style.visibility = 'visible';
+  fetch("registerForms/studentForm.html").then(response=> response.text())
+  .then(text=> document.getElementById('Form').innerHTML = text);
+}else if(document.getElementById('dot-2').checked){
+  fetch("registerForms/teacherForm.html").then(response=> response.text())
+  .then(text=> document.getElementById('Form').innerHTML = text);
 }
-else document.getElementById('ifChecked').style.visibility = 'hidden';
+
 
 }
   </script>
