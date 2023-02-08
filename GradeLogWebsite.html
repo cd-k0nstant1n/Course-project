@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">  
-</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="GradeLogWebsitestyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <title>Login</title>
+
+</head>
 <body>
-    <div class="center">
-      <h1>Login</h1>
-      <form method="post">
-        <div class="txt_field">
-          <input type="text" required>
-          <span></span>
-          <label>First name</label>
+   <div class="box">
+    <div class="container">
+
+        <div class="top">
+            <header>Влизане</header>
+            <br>
+
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Първо име" id="">
+            <i class='bx bx-user' ></i>
         </div>
-        <div class = "text_field">
-          <input type="text" required>
-          <span></span>
-          <label>Last name</label>
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Фамилия" id="">
+            <i class='bx bx-user' ></i>
         </div>
-        <div class = "text_field">
-          <input type="number" required>
-          <span></span>
-          <label>Course number</label>
+        <div class="input-field">
+            <input type="number" class="input" placeholder="Курсов номер" id="">
+            <i class='bx bx-user' ></i>
         </div>
-        <div class="txt_field">
-          <input type="password" required>
-          <span></span>
-          <label>Password</label>
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Парола" id="">
+            <i class='bx bx-lock-alt'></i>
         </div>
-        <div class="pass">Forgot Password?</div>
-        <input type="submit" value="Login">
-        <div class="signup_link"></div>
-        Not a member? <a href="#">Signup</a>
-      </form>
+
+        <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="">
+        </div>
+
+        <div class="two-col">
+            <div class="one">
+               <input type="checkbox" name="" id="check">
+               <label for="check">Запомни ме</label>
+            </div>
+            <div class="two">
+                <label><a href="#">Забравена парола?</a></label>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+<br><br>
+    <div class="signup_link">
+        <a href="#">За първи път?</a>
+        </div>
+</div>  
