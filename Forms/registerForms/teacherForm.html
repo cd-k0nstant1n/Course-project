@@ -10,18 +10,9 @@
       <input type="text" placeholder="Въведете фамилия" required>
     </div>
 
-    <script type="text/javascript">
-      function yesCheck() {
-          if (document.getElementById('yesCheck').checked) {
-              document.getElementById('ifYes').style.display = 'block';
-          }
-          else document.getElementById('ifYes').style.display = 'none';
-      }
-      </script>
-
     <div>  
-    <span class="details">Класен ръководител?</span> <br>
-    <input type="checkbox" onclick="javascript:yesCheck();" name="yes" id="yesCheck"> Да<br>
+      <span class="details">Класен ръководител?</span> <br>
+      <input type="checkbox" onclick="javascript:yesCheak()" name="yes" id="yesCheck"> Да<br>
     </div>
 
     <div class="input-box" id="ifYes" style="display:none">
@@ -47,6 +38,11 @@
     <div class="input-box" >
       <span class="details">Потвърждение на парола</span>
       <input type="text" placeholder="Потвърдете парола" required>
+    </div>
+
+    <div class="input-box" >
+      <span class="details">Предмет по който преподавате</span>
+      <input type="text" placeholder="Въведете предмет" required>
     </div>
 
   </div>
