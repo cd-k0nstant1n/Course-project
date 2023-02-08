@@ -3,7 +3,7 @@
     font-family: 'poppins' ,sans-serif;
 }
 body{
-    background-image: url("images/school-06.jpg");
+    background-image: url("../images/school-06.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -1,1 +1,42 @@
-teacherForm
+<div class="user-details" id="ifChecked">
+    <div class="input-box">
+      <span class="details">Първо име</span>
+      <input type="text" id="yes" name="yes" placeholder="Въведете първо име" required>
+    </div>
+    <div class="input-box">
+      <span class="details">Фамилия</span>
+      <input type="text" placeholder="Въведете фамилия" required>
+    </div>
+    <script type="text/javascript">
+      function yesnoCheck() {
+          if (document.getElementById('yesCheck').checked) {
+              document.getElementById('ifYes').style.display = 'block';
+          }
+          else document.getElementById('ifYes').style.display = 'none';
+      }
+      </script>
+    <div>
+    <span>Класен ръководител?</span> <br>
+    <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck">Да<br>
+    </div>
+    <div class="input-box" id="ifYes" style="display:none">
+      <span class="details">Класен ръководител на:</span>
+      <input type="text" placeholder="Въведете клас" required>
+    </div>
+    <div class="input-box">
+      <span class="details">Имейл</span>
+      <input type="text" placeholder="Въведете имейл" required>
+    </div>
+    <div class="input-box">
+      <span class="details">Телефонен номер</span>
+      <input type="text" placeholder="Въведете телефон" required>
+    </div>
+    <div class="input-box" >
+      <span class="details">Парола</span>
+      <input type="text" placeholder="Въведете паролата" required>
+    </div>
+    <div class="input-box" >
+      <span class="details">Потвърждение на парола</span>
+      <input type="text" placeholder="Потвърдете парола" required>
+    </div>
+  </div>
