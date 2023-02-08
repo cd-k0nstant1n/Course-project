@@ -9,27 +9,38 @@
 <body>
   <div class="container">
     <div class="title">Създаване на акаунт</div>
-    <div class="content">
-      <form action="#">
-        <div class="chose-role">
-          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-1">
-          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-2">
-          <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-3">
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="role">Ученик</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="role">Учител</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="role">Родител</span>
-            </label>
+
+      <div class="content">
+
+        <form action="#">
+
+          <div class="chose-role">
+
+            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-1">
+            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-2">
+            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-3">
+
+            <div class="category">
+
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="role">Ученик</span>
+              </label>
+
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="role">Учител</span>
+              </label>
+
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="role">Родител</span>
+              </label>
+
+            </div>
+
           </div>
-        </div>
+
         <div id="Form">
 
         </div>
@@ -42,13 +53,15 @@
   </div>
   <script>
     function roleCheck() {
-if (document.getElementById('dot-1').checked) {
-  fetch("registerForms/studentForm.html").then(response=> response.text())
-  .then(text=> document.getElementById('Form').innerHTML = text);
-}else if(document.getElementById('dot-2').checked){
-  fetch("registerForms/teacherForm.html").then(response=> response.text())
-  .then(text=> document.getElementById('Form').innerHTML = text);
-}
+  if (document.getElementById('dot-1').checked) {
+    fetch("registerForms/studentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+  }
+  else if(document.getElementById('dot-2').checked){
+  fetch("registerForms/teacherForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+  }
+  else if(document.getElementById('dot-3').checked){
+  fetch("registerForms/parentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+  }
 
 
 }
