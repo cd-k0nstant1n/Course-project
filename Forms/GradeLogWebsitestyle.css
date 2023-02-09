@@ -3,24 +3,21 @@
     font-family: 'poppins' ,sans-serif;
 }
 body{
-    background-image: url("../images/school-06.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
-}
-.box{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    padding: 10px;
+    background-image: url("../images/school-06.jpg")
+    
 }
 .container{
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px 0 15px;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    /* box-shadow: 0 5px 10px rgba(0,0,0,0.15); */
     
 }
 span{
@@ -31,7 +28,7 @@ span{
     padding: 10px 0 10px 0;
 }
 header{
-    color: #fff;
+    color: rgb(87, 141, 70);
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -40,53 +37,28 @@ header{
 
 .input-field .input{
     height: 45px;
-    width: 87%;
-    border: none;
+    width: 90%;
+    margin: 10px;
     border-radius: 30px;
-    color: #fff;
+    color: #000000;
     font-size: 15px;
-    padding: 0 0 0 45px;
+    padding:0 0 0 45px;
     background: rgba(255,255,255,0.1);
-    outline: none;
+    
 }
 i{
     position: relative;
     top: -33px;
     left: 17px;
-    color: #fff;
+    color: rgb(87, 141, 70);
 }
 ::-webkit-input-placeholder{
-    color: #fff;
+    color: rgb(87, 141, 70);
 }
-/* form .button{
-    height: 45px;
-    margin: 35px 0;
-    
-  }
-  form .button input{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: 0.4s;
-    background-color: rgb(87, 141, 70);
-    border: 2px solid rgb(87, 141, 70)
-    /*background: linear-gradient(135deg, #39945d, #f8f8f8);*/
-  /* } */
-  /* form .button input:hover{
-   background-color: #ffffff;
-   color: rgb(87, 141, 70); */ 
 .submit{
-    border: none;
     border-radius: 30px;
     font-size: 15px;
     height: 45px;
-    outline: none;
     width: 100%;
     color: #fff;
     background-color: rgb(67, 160, 39);
@@ -103,7 +75,7 @@ i{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: #fff;
+    color: #000000;
     font-size: small;
     margin-top: 10px;
 }
@@ -112,11 +84,11 @@ i{
 }
 label a{
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 .signup_link a{
     text-decoration: none;
-    color: #fff;     
+    color: #000000;     
 }
 .signup_link{
     text-align: center;
