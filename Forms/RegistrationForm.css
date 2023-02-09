@@ -119,7 +119,7 @@ form .input-box span.details{
    cursor: pointer;
    transition: 0.4s;
    background-color: rgb(87, 141, 70);
-   border-color:rgb(87, 141, 70);
+   border: 2px solid rgb(87, 141, 70)
    /*background: linear-gradient(135deg, #39945d, #f8f8f8);*/
  }
  form .button input:hover{
