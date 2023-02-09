@@ -152,4 +152,11 @@ form .user-details .input-box{
   .container .content .category{
     flex-direction: column;
   }
-}
+  }
+  .logInButton a{
+    color: #4ca75a;
+    text-decoration: none;
+  }
+  .logInButton{
+    text-align: center;
+  }
