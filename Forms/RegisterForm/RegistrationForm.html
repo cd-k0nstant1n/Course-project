@@ -63,13 +63,13 @@
   <script>
     function roleCheck() {
   if (document.getElementById('dot-1').checked) {
-    fetch("registerForms/studentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+    fetch("../registerForms/studentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
   }
   else if(document.getElementById('dot-2').checked){
-  fetch("registerForms/teacherForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+  fetch("../registerForms/teacherForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
   }
   else if(document.getElementById('dot-3').checked){
-  fetch("registerForms/parentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
+  fetch("../registerForms/parentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
   }
 }
   </script>
