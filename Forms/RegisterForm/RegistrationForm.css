@@ -16,7 +16,7 @@ body{
 .container{
   max-width: 700px;
   width: 100%;
-  background-color: #fff;
+  background-color: #ffffff; 
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
@@ -123,7 +123,7 @@ form .input-box span.details{
    /*background: linear-gradient(135deg, #39945d, #f8f8f8);*/
  }
  form .button input:hover{
-  background-color: #ffffff;
+  background-color: #ffffff96;
   color: rgb(87, 141, 70);
   
   /* transform: scale(0.99); */
