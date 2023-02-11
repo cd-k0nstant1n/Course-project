@@ -13,13 +13,14 @@
 
       <div class="content">
 
-        <form action="#">
+        <form method="POST" action="Registrated.php">
 
           <div class="chose-role">
-
-            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-1">
-            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-2">
-            <input type="radio" onclick="javascript:roleCheck()" name="role" id="dot-3">
+<!--Сложете поле за еднократен потвърдителен код-->
+            <input type="radio" onclick="javascript:roleCheck()" name="role" value="student" id="dot-1" required> <!--Може да се регистрираш само ако си избрал роля. Направете го
+			ако не си избрал роля и събмитнеш да ти казва че трябва да избереш роля--->
+            <input type="radio" onclick="javascript:roleCheck()" name="role" value="teacher" id="dot-2">
+            <input type="radio" onclick="javascript:roleCheck()" name="role" value="parent" id="dot-3">
 
             <div class="category">
 
@@ -30,8 +31,9 @@
 
               <label for="dot-2">
                 <span class="dot two"></span>
-                <span class="role">Учител</span>
-              </label>
+                <span class="role">Учител</span><!--ако не си избрал че си класен ръководител и не си сложил клас да не ти дава да събмитнеш-->
+              <!--Опция да се сложат класовете на които преподава(може на един ред и когато се попълва човека да ги разделя със ",")-->
+			  </label>
 
               <label for="dot-3">
                 <span class="dot three"></span>

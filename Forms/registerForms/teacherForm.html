@@ -2,26 +2,26 @@
 
     <div class="input-box">
       <span class="details">Първо име</span>
-      <input type="text" id="yes" name="yes" placeholder="Въведете първо име" required>
+      <input type="text" id="yes" name="first_name" placeholder="Въведете първо име" required>
     </div>
 
     <div class="input-box">
       <span class="details">Фамилия</span>
-      <input type="text" placeholder="Въведете фамилия" required>
+      <input type="text" name="family_name" placeholder="Въведете фамилия" required>
     </div>
     <div class="input-box">
       <span class="details">Имейл</span>
-      <input type="text" placeholder="Въведете имейл" required>
+      <input type="text" name="mail" placeholder="Въведете имейл" required>
     </div>
 
     <div class="input-box">
       <span class="details">Телефонен номер</span>
-      <input type="text" placeholder="Въведете телефон" required>
+      <input type="text" name="phone" placeholder="Въведете телефон" required>
     </div>
 
     <div class="input-box" >
       <span class="details">Парола</span>
-      <input type="text" placeholder="Въведете паролата" required>
+      <input type="text" name="password" placeholder="Въведете паролата" required>
     </div>
 
     <div class="input-box" >
@@ -31,15 +31,15 @@
 
     <div class="input-box" >
       <span class="details">Предмет по който преподавате</span>
-      <input type="text" placeholder="Въведете предмет" required>
+      <input type="text" name="subject" placeholder="Въведете предмет" required>
     </div>
     
     <div>  
       <span class="details" style="padding-right: 120px;">Класен ръководител?</span> 
-      <input type="checkbox" class="details" onclick="javascript: yes_check()" name="yes" id="yesCheck"><br> 
+      <input type="checkbox" class="details" onclick="javascript: yes_check()" name="class_teacher?" id="yesCheck"><br> 
     <div class="input-box">
       <div class="appering_field" id="ifYes" style="display:none">
-        <input type="text" placeholder="Въведете клас" id="yes" name="yes">
+        <input type="text" name="class" placeholder="Въведете клас" id="yes" name="yes">
       </div>
     </div>
 
