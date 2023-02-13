@@ -21,12 +21,12 @@
 
     <div class="input-box" >
       <span class="details">Парола</span>
-      <input type="password" name="password" placeholder="Въведете паролата" required>
+      <input type="password" name="password" placeholder="Въведете паролата" name="pass" id="pass1" onkeyup="validate()" required>
     </div>
 
     <div class="input-box" >
       <span class="details">Потвърждение на парола</span>
-      <input type="password" placeholder="Потвърдете парола" required>
+      <input type="password" placeholder="Потвърдете парола" name="pass" id="pass2" onkeyup="validate()" required>
     </div>
 
     <div class="input-box" >
@@ -36,7 +36,7 @@
     
     <div>  
       <span class="details" style="padding-right: 120px;">Класен ръководител?</span> 
-      <input type="checkbox" class="details" onclick="javascript: yes_check()" name="class_teacher?" id="yesCheck" required><br> 
+      <input type="checkbox" class="details" onclick="javascript: yes_check()" name="class_teacher?" id="yesCheck"><br> 
     <div class="input-box">
       <div class="appering_field" id="ifYes" style="display:none">
         <input type="text" name="class" placeholder="Въведете клас" id="yes" name="yes">

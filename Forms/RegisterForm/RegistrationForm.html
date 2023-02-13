@@ -13,7 +13,7 @@
 
       <div class="content">
 
-        <form method="POST" action="Registrated.php">
+        <form method="POST" action="Registrated.php" onsubmit="return validate()">
 
           <div class="chose-role">
 <!--Сложете поле за еднократен потвърдителен код-->
@@ -49,6 +49,7 @@
          
         <div class="button">
           <input type="submit" value="Регистриране">
+          <span id="error" style="color:red" class="error_pass"></span>
         </div>
 
       </form>
