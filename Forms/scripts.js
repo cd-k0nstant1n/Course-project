@@ -17,6 +17,9 @@ function yes_check(){
     fetch("../registerForms/parentForm.html").then(response=> response.text()).then(text=> document.getElementById('Form').innerHTML = text);
     }
   }
+  function clearText() {
+    document.getElementById('alert').style.display = 'none';
+  }
 
   function validate() {
     var password1 = document.getElementById("pass1").value;
@@ -29,3 +32,21 @@ function yes_check(){
       return true;
     }
   }
+
+
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+            // prevent form submit
+            const form = document.querySelector("form");
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+            });
