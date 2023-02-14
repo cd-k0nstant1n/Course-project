@@ -23,7 +23,7 @@
 			{
 				session_start();
 				$_SESSION["mail"] = $mail;
-				header("Location: ../Home/Home.php");
+				header("Location: ../../Home/Home.php");
 			}
 			else
 			{
