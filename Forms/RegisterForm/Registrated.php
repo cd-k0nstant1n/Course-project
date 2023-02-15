@@ -1,6 +1,3 @@
-<!--Като завършиш регистрацията има екран който ти казва че регистрацията е 
-успешна и има бутон който те връща в логин страницата-->
-
 <?php
 	$username = "root";
 	$servername = "localhost";
@@ -34,6 +31,10 @@
 			if(!mysqli_query($connection, $sql))
 			{
 				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+			}
+			else
+			{
+				header("Location: ../LoginForm/GradeLogWebsite.html");
 			}
 		}
 		else if($_POST["role"] == "teacher")
@@ -69,6 +70,10 @@
 			{
 				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
 			}
+			else
+			{
+				header("Location: ../LoginForm/GradeLogWebsite.html");
+			}
 		}
 		else if($_POST["role"] == "parent")
 		{
@@ -93,6 +98,10 @@
 			if(!mysqli_query($connection, $sql))
 			{
 				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+			}
+			else
+			{
+				header("Location: ../LoginForm/GradeLogWebsite.html");
 			}
 		}
 	}
