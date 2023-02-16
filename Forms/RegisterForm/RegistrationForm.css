@@ -66,6 +66,7 @@ form .input-box span.details{
 .user-details .input-box input:valid{
   border-color:rgb(87, 141, 70);
 }
+
  form .chose-role .chose-role{
   font-size: 20px;
   font-weight: 500;
@@ -166,6 +167,25 @@ form .user-details .input-box{
   flex-wrap: wrap;
   justify-content: space-between;
   margin:5px 0 12px 0;
+}
+.user-details .code-input input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 1s ease;
+}
+form .user-details .code-input{
+  margin-bottom: 15px;
+  width: 100%;
+}
+.user-details .code-input input:focus,
+.user-details .code-input input:valid{
+  border-color:rgb(87, 141, 70);
 }
  
 /* .appering_field .user-details .input-box{
