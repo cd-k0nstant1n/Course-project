@@ -168,7 +168,7 @@ form .user-details .input-box{
   justify-content: space-between;
   margin:5px 0 12px 0;
 }
-.user-details .code-input input{
+/* .user-details .code-input input{
   height: 45px;
   width: 100%;
   outline: none;
@@ -178,6 +178,7 @@ form .user-details .input-box{
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   transition: all 1s ease;
+  align-items: center;
 }
 form .user-details .code-input{
   margin-bottom: 15px;
@@ -186,7 +187,8 @@ form .user-details .code-input{
 .user-details .code-input input:focus,
 .user-details .code-input input:valid{
   border-color:rgb(87, 141, 70);
-}
+} */
+
  
 /* .appering_field .user-details .input-box{
   height: 45px;
