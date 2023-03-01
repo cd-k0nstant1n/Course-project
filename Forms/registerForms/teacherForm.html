@@ -1,4 +1,15 @@
-<div class="user-details" id="ifChecked">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../registerForms/teacherFormStyle.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0"> 
+  <title>Document</title>
+</head>
+<body>
+  <div class="user-details" id="ifChecked">
 
     <div class="input-box">
       <span class="details">Първо име</span>
@@ -30,11 +41,16 @@
       <input type="password" placeholder="Потвърдете парола" name="pass" id="pass2" onkeyup="validate()" required>
     </div>
 
-    <div class="input-box" >
-      <span class="details">Предмет по който преподавате</span>
-      <input type="text" name="subject" placeholder="Въведете предмет" required>
+    <div class="input-box">
+      <span class="details">Изберете предмет</span>
+    <select id="subject-select">
+      <option value="chose-subject">Изберете предмет</option>
+      <option value="bel">БЕЛ</option>
+      <option value="math">Математика</option>
+      <option value="history"></option>
+    </select>
     </div>
-    
+
     <div>  
       <span class="details" style="padding-right: 120px;">Класен ръководител?</span> 
       <input type="checkbox" class="details" onclick="javascript: yes_check()" name="class_teacher?" id="yesCheck"><br> 
@@ -50,5 +66,12 @@
     <span class="details">Код за достъп</span>
     <input type="text" name = "code" placeholder="Въведете код" required>
   </div>
+  
+
 
 </div>
+
+  
+</body>
+</html>
+

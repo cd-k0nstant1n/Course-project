@@ -36,7 +36,7 @@ span{
 }
 header{
     color: #fff;
-    font-size: 30px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     padding: 10px 0 10px 0;
@@ -63,16 +63,6 @@ i{
     color: #fff;
 }
 .submit{
-    /* border: none;
-    border-radius: 30px;
-    font-size: 15px;
-    height: 45px;
-    outline: none;
-    width: 100%;
-    color: black;
-    background: rgba(255,255,255,0.7);
-    cursor: pointer;
-    transition: .3s ; */
     border-radius: 30px;
     font-size: 15px;
     height: 45px;

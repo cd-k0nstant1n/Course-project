@@ -170,7 +170,7 @@ form .user-details .input-box{
 }
 /* .user-details .code-input input{
   height: 45px;
-  width: 100%;
+  width: 50%;
   outline: none;
   font-size: 16px;
   border-radius: 5px;
@@ -205,3 +205,11 @@ form .user-details .code-input{
 .appering_field .user-details  .input-box input:valid{
   border-color:rgb(255, 255, 255);
 } */
+
+.support-box {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    top: 5px !important;
+    position: absolute !important;
+    right: 20px;
+}
+
