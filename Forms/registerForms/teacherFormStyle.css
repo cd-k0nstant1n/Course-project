@@ -7,7 +7,6 @@ select {
   padding-left: 15px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
-  transition: all 1s ease;
 }
 
 select:focus {
