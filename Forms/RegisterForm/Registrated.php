@@ -34,7 +34,7 @@
 			}
 			else
 			{
-				header("Location: ../LoginForm/GradeLogWebsite.html");
+				header("Location: ../LoginForm/Login_form.html");
 			}
 		}
 		else if($_POST["role"] == "teacher")
@@ -72,7 +72,7 @@
 			}
 			else
 			{
-				header("Location: ../LoginForm/GradeLogWebsite.html");
+				header("Location: ../LoginForm/Login_form.html");
 			}
 		}
 		else if($_POST["role"] == "parent")
@@ -101,7 +101,7 @@
 			}
 			else
 			{
-				header("Location: ../LoginForm/GradeLogWebsite.html");
+				header("Location: ../LoginForm/Login_form.html");
 			}
 		}
 	}
