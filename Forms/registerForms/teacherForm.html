@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../registerForms/teacherFormStyle.css">
+    <link rel="stylesheet" href="teacherFormStyle.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0"> 
   <title>Document</title>
 </head>
@@ -42,40 +42,37 @@
     </div>
 
     <div class="input-box">
-      <span class="details">Изберете предмет</span>
-    <select id="subject-select">
-      <option value="chose-subject" selected disabled style="color:#ccc;" >Изберете предмет</option>
-      <option value="bel">БЕЛ</option>
-      <option value="math">Математика</option>
-      <option value="engl">Aнглийски</option>
-      <option value="physical">Физическо</option>
-      <option value="phylosophy">Философия</option>
-      <option value="IT">Информационни тех.</option>
-      <option value="enterpreneurship">Предприемачество</option>
-      <option value="math">Математика</option>
-    </select>
+        <span class="details">Изберете предмет</span>
+      <select id="subject-select" style="color: #fff;">
+        <option value="chose-subject" selected disabled>Изберете предмет</option>
+        <option value="bel">БЕЛ</option>
+        <option value="math">Математика</option>
+        <option value="engl">Aнглийски</option>
+        <option value="physical">Физическо</option>
+        <option value="phylosophy">Философия</option>
+        <option value="IT">Информационни тех.</option>
+        <option value="enterpreneurship">Предприемачество</option>
+        <option value="math">Математика</option>
+      </select>
     </div>
+
     <div>  
       <span class="details" style="padding-right: 120px;">Класен ръководител?</span> 
       <input type="checkbox" class="details" onclick="javascript: yes_check()" name="class_teacher?" id="yesCheck"><br> 
-    <div class="input-box">
-      <div class="appering_field" id="ifYes" style="display:none">
-        <input type="text" name="class" placeholder="Въведете клас" id="yes" name="yes">
+      <div class="input-box">
+        <div class="appering_field" id="ifYes" style="display:none">
+          <input type="text" name="class" placeholder="Въведете клас" id="yes" name="yes">
+        </div>
       </div>
     </div>
-
+  
+    <div class="input-box">
+      <span class="details">Код за достъп</span>
+      <input type="text" name = "code" placeholder="Въведете код" required>
+    </div>
+  
   </div>
-  
-  <div class="input-box">
-    <span class="details">Код за достъп</span>
-    <input type="text" name = "code" placeholder="Въведете код" required>
-  </div>
-  
 
-
-</div>
-
-  
 </body>
 </html>
 

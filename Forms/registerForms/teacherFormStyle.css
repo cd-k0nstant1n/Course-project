@@ -5,8 +5,9 @@ select {
   font-size: 16px;
   border-radius: 5px;
   padding-left: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-bottom-width: 2px;
+  background-color: #fff;
 }
 
 select:focus {
