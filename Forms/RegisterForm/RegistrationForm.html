@@ -17,7 +17,6 @@
         <form method="POST" action="Registrated.php" onsubmit="return validate()">
 
           <div class="chose-role">
-<!--Сложете поле за еднократен потвърдителен код-->
             <input type="radio" onclick="javascript:roleCheck()" name="role" value="student" id="dot-1" required>
             <input type="radio" onclick="javascript:roleCheck()" name="role" value="teacher" id="dot-2">
             <input type="radio" onclick="javascript:roleCheck()" name="role" value="parent" id="dot-3">
@@ -31,8 +30,7 @@
 
               <label for="dot-2">
                 <span class="dot two"></span>
-                <span class="role">Учител</span><!--ако не си избрал че си класен ръководител и не си сложил клас да не ти дава да събмитнеш-->
-              <!--Опция да се сложат класовете на които преподава(може на един ред и когато се попълва човека да ги разделя със ",")-->
+                <span class="role">Учител</span>
 			        </label>
 
               <label for="dot-3">
