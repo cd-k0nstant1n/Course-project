@@ -44,7 +44,20 @@
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>
 			<li><a href="#">За нас</a></li>
-			<li><a href="#" class="action_btn">Влез</a></li>
+			<li>
+			<?php
+				session_start();
+			
+				if(!isset($_SESSION['mail']))
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a>';
+				}
+				else
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+				}
+			?>
+			</li>
 		</div>
 	</header>
 
