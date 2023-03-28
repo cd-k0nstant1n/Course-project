@@ -23,11 +23,12 @@
 			{
 				session_start();
 				$_SESSION["mail"] = $mail;
+				$_SESSION["role"] = "student";
 				header("Location: ../../Home/Home.php");
 			}
 			else
 			{
-				header("Location: Login_form.html");
+				header("Location: Login_form.php");
 				$_SESSION["error"] = "Incorrect username or password. Please try again.";
 			}
 		}
@@ -45,11 +46,12 @@
 				{
 					session_start();
 					$_SESSION["mail"] = $mail;
+					$_SESSION["role"] = "teacher";
 					header("Location: ../../Home/Home.php");
 				}
 				else
 				{
-					header("Location: Login_form.html");
+					header("Location: Login_form.php");
 					$_SESSION["error"] = "Incorrect username or password. Please try again.";
 				}
 			}
@@ -67,17 +69,18 @@
 					{
 						session_start();
 						$_SESSION["mail"] = $mail;
+						$_SESSION["role"] = "parent";
 						header("Location: ../../Home/Home.php");
 					}
 					else
 					{
-						header("Location: Login_form.html");
+						header("Location: Login_form.php");
 						$_SESSION["error"] = "Incorrect username or password. Please try again.";
 					}
 				}
 				else
 				{
-					header("Location: Login_form.html");
+					header("Location: Login_form.php");
 					$_SESSION["error"] = "Incorrect username or password. Please try again.";
 				}
 			}

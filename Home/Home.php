@@ -14,13 +14,24 @@
 			<div class="logo"><a href="#">e-dnevnikbg</a></div>
 			<ul class="links">
 				<li><a href="Home.php">Начало</a></li>
-				<li><a href="#">Дневник</a></li>
+				<li><a href="Journal.php">Дневник</a></li>
 				<li><a href="#">Програма</a></li>
 				<li><a href="#">Отзиви</a></li>
 				<li><a href="#">Събития</a></li>
 				<li><a href="#">За нас</a></li>
 			</ul>
-			<a href="../Forms/LoginForm/Login_form.html" class="action_btn">Влез</a>
+			<?php
+				session_start();
+			
+				if(!isset($_SESSION['mail']))
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a>';
+				}
+				else
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+				}
+			?>
 			<div class="toggle_btn">
 				<i class="fa-solid fa-bars"></i>
 			</div>
