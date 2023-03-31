@@ -15,6 +15,8 @@
 
 </head>
 <body>
+
+
     <div class="container">
     
         <div class="top">
@@ -23,12 +25,12 @@
             
 			<form method="POST" action="check_login.php">
             <div class="input-field">
-                <input type="email" class="input" name="mail" placeholder="Имейл" id="" required><!--Направете го да казва че трябва да се попълни ако не е и е пробвано са се събмитне-->
+                <input type="email" class="input" name="mail" placeholder="Имейл" id="" required>
                 <i class='bx bx-user'></i>
             </div>
 
             <div class="input-field">
-                <input type="Password" class="input" name="password" placeholder="Парола" id="" required><!--Направете го да казва че трябва да се попълни ако не е и е пробвано са се събмитне-->
+                <input type="Password" class="input" name="password" placeholder="Парола" id="" required>
                 <i class='bx bx-lock-alt'></i>
             </div>
                

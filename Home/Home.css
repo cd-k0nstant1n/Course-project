@@ -106,14 +106,14 @@ header{
     justify-content: center;
 }
 
-@media(max-width: 992px) {
+@media(max-width: 1036px) {
     .navbar .links,
     .navbar .action_btn{
         display: none;
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: 1036px) {
      .navbar .toggle_btn{
         display: none !important;
     }
@@ -127,7 +127,7 @@ header{
     display: block;
 }
 
-@media(max-width: 992px) {
+@media(max-width: 1036px) {
     .dropdown_menu{
         left: 2rem;
         width: unset;
