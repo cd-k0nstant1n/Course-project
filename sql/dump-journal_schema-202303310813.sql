@@ -32,18 +32,8 @@ CREATE TABLE `parents` (
   `phone` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `parents`
---
-
-LOCK TABLES `parents` WRITE;
-/*!40000 ALTER TABLE `parents` DISABLE KEYS */;
-INSERT INTO `parents` VALUES (3,'Parent0_name','Parent0_family','192',18,'Parent@0.com','+359881234567','$2y$10$KwJ9qOFK8JRjpN.mlQxKgeqRgaxhggAwKrivl0j/ryl8EqLlXAhPO');
-/*!40000 ALTER TABLE `parents` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `students`
@@ -61,19 +51,36 @@ CREATE TABLE `students` (
   `mail` varchar(45) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `English` int(11) DEFAULT NULL,
+  `Math` int(11) DEFAULT NULL,
+  `Bulgarian` int(11) DEFAULT NULL,
+  `Programming` int(11) DEFAULT NULL,
+  `Physical Education(PE)` int(11) DEFAULT NULL,
+  `Music` int(11) DEFAULT NULL,
+  `Absences` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `students`
+-- Table structure for table `subjects`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (8,'Martin','Yonkov','192',18,'m.yonkov.2005@gmail.com','+359889922733','$2y$10$rnA1jjekOLp5OKaGfcpu6e8STtRF3uiMk9iFHvovs0OL4h3Mo49ge');
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `subjects`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `subjects` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class` varchar(100) DEFAULT NULL,
+  `English` varchar(100) DEFAULT NULL,
+  `Bulgarian` varchar(100) DEFAULT NULL,
+  `Math` varchar(100) DEFAULT NULL,
+  `Programming` varchar(100) DEFAULT NULL,
+  `Physical Education(PE)` varchar(100) DEFAULT NULL,
+  `Music` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `teachers`
@@ -96,16 +103,6 @@ CREATE TABLE `teachers` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `teachers`
---
-
-LOCK TABLES `teachers` WRITE;
-/*!40000 ALTER TABLE `teachers` DISABLE KEYS */;
-INSERT INTO `teachers` VALUES (10,'Stefan','Stefanov','Stefaka@manqka.com','+359886942011','$2y$10$PgeJ/0Zx7pncrfoLy9fvtOFEevYAc0ap7QF7cpHtN4f7rUvFktX92','English','192');
-/*!40000 ALTER TABLE `teachers` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping routines for database 'journal_schema'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-11 21:28:00
+-- Dump completed on 2023-03-31  8:13:15
