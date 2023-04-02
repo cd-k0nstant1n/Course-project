@@ -29,7 +29,13 @@
 				}
 				else
 				{
-					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+					echo '<div class="profile-box">
+					<button class="profile-btn">Профил</button>
+					<ul class="profile-dropdown">
+					  <li><a href="#">Моят профил</a></li>
+					  <li><a href="../Forms/LoginForm/Login_form.php">Излез</a></li>
+					</ul>
+				  </div>';
 				}
 			?>
 			<div class="toggle_btn">
@@ -64,6 +70,12 @@
 	<main>
 		
 	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2023 e-dnevnik. All rights reserved.</p>
+		</div>
+	</footer>
 
 	<script src="../scripts.js"></script>
 </body>	

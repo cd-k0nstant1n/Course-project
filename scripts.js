@@ -45,3 +45,10 @@ function yes_check(){
     ? 'fa-solid fa-xmark'
     : 'fa-solid fa-bars'
   }
+
+  const profileBtn = document.querySelector('.profile-btn');
+  const profileDropdown = document.querySelector('.profile-dropdown');
+
+  profileBtn.addEventListener('click', () => {
+  profileDropdown.classList.toggle('open');
+  });

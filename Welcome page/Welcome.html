@@ -7,6 +7,41 @@
     <title>Добре дошли в e-dnevnikbg</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="welcome.css">
+	<style>
+		.profile-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.profile-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-box span {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.profile-box .profpic {
+  color: #000;
+  text-decoration: none;
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+	</style>
 </head>
 <body>
 
@@ -30,6 +65,21 @@
 		</div>
 	</footer>
 
+	
+		<div class="profile">
+			<span>(First name)</span>
+			<img class="user" src="../images/user.png">
+		</div>
+
+		<a href="profile" class="dropdown-toggle pr-10">
+			<span class="username username-hide-on-mobile">Петков</span>
+			<img alt="" class="img-circle avatar small" src="../images/user.png">
+		</a>
+
+		<div class="profile-box">
+			<a class="profpic" href="/profile"><img src="../images/user.png" alt="User Profile Image"><span>Welcome, Name!</snap>
+			</a>
+		  </div>
 	<!-- Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

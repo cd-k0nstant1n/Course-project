@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="Home.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<title>Начало</title>
+	<title>Дневник</title>
 </head>
 <body>
 	<header>
@@ -29,7 +29,13 @@
 				}
 				else
 				{
-					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+					echo '<div class="profile-box">
+					<button class="profile-btn">Профил</button>
+					<ul class="profile-dropdown">
+					  <li><a href="#">Моят профил</a></li>
+					  <li><a href="../Forms/LoginForm/Login_form.php">Излез</a></li>
+					</ul>
+				  </div>';
 				}
 			?>
 			<div class="toggle_btn">
@@ -44,7 +50,7 @@
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>
 			<li><a href="#">За нас</a></li>
-			<li><a href="#" class="action_btn">Влез</a></li>
+			<li><a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a></li>
 		</div>
 	</header>
 
@@ -79,13 +85,13 @@
 						$row = $result->fetch_assoc();
 						
 						echo '<table border=1>';
-						echo '<tr> <th> Subject </th> <th> Grades </th> </tr>';
-						echo '<tr> <td> English </td> <td>' . $row['English'] . '</td></tr>';
-						echo '<tr> <td> Math </td> <td>' . $row['Math'] . '</td></tr>';
-						echo '<tr> <td> Bulgarian </td> <td>' . $row['Bulgarian'] . '</td></tr>';
-						echo '<tr> <td> Programming </td> <td>' . $row['Programming'] . '</td></tr>';
-						echo '<tr> <td> PE </td> <td>' . $row['Physical Education(PE)'] . '</td></tr>';
-						echo '<tr> <td> Music </td> <td>' . $row['Music'] . '</td></tr>';
+						echo '<tr> <th> Предмет </th> <th> Оценки </th> </tr>';
+						echo '<tr> <td> Английски език </td> <td>' . $row['English'] . '</td></tr>';
+						echo '<tr> <td> Математика </td> <td>' . $row['Math'] . '</td></tr>';
+						echo '<tr> <td> България </td> <td>' . $row['Bulgarian'] . '</td></tr>';
+						echo '<tr> <td> Програмиране </td> <td>' . $row['Programming'] . '</td></tr>';
+						echo '<tr> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td></tr>';
+						echo '<tr> <td> Музика </td> <td>' . $row['Music'] . '</td></tr>';
 						echo '</table>';
 						break;
 						
@@ -117,6 +123,12 @@
 			}
 		?>
 	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2023 e-dnevnik. All rights reserved.</p>
+		</div>
+	</footer>
 
 	<script src="../scripts.js"></script>
 </body>	
