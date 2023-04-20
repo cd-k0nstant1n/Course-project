@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="KUR.css">
+	<link rel="stylesheet" href="Home.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<title>Начало</title>
 </head>
 <body>
 	<header>
 		<div class="navbar">
-			<img src="../images/Project-Logo-2.png" class="logo">
+			<a href="Home.php"><img src="../images/Project-Logo-2.png" class="logo"></a>
 			<ul class="links">
 				<li><a href="Home.php">Начало</a></li>
 				<li><a href="Journal.php">Дневник</a></li>
@@ -62,7 +62,7 @@
 
 		<div class="dropdown_menu">
 			<li><a href="Home.php">Начало</a></li>
-			<li><a href="#">Дневник</a></li>
+			<li><a href="Journal.php">Дневник</a></li>
 			<li><a href="#">Програма</a></li>
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>

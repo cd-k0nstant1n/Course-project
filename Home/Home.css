@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: cursive;
+  font-family: Gill Sans, sans-serif;
 }
 body{
   background-image: url(../images/school-06.jpg);
@@ -192,8 +192,8 @@ header{
 }
 
 .logo{
-  width: 150px;
-  margin-top: 10px;
+  width: 200px;
+  /* margin-top: 5px; */
 }
 
 .sub-menu-wrap{

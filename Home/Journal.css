@@ -14,10 +14,10 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 60%; 
+    width: 90%; 
     border-collapse: collapse;
     border-spacing: 0;
-    box-shadow: 0 2px 15px rgba(64,64,64,.7);
+    box-shadow: 0 2px 15px rgba(100, 95, 95, 0.7);
     border-radius: 12px 12px 0 0;
     overflow: hidden;
    
@@ -31,7 +31,7 @@
    th{
     background-color: #4ca75a;
     color: #fafafa;
-    font-family: 'Open Sans',Sans-serif;
+    font-family: Gill Sans, sans-serif;
     font-weight: 200;
     text-transform: uppercase;
    
@@ -39,8 +39,23 @@
    tr{
     width: 100%;
     background-color: #fafafa;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Gill Sans, sans-serif;
    }
    tr:nth-child(even){
     background-color: #eeeeee;
    }
+   .add-grade{
+    margin-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-collapse: collapse;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4ca75a;
+    border-radius: 5px;
+    border: 0px;
+   }
+   

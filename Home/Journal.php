@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<div class="navbar">
-			<div class="logo"><a href="#">e-dnevnikbg</a></div>
+			<img src="../images/Project-Logo-2.png" class="logo">
 			<ul class="links">
 				<li><a href="Home.php">Начало</a></li>
 				<li><a href="Journal.php">Дневник</a></li>
@@ -33,10 +33,26 @@
 					echo '<div class="profile-box">
 					<button class="profile-btn">Профил</button>
 					<ul class="profile-dropdown">
-					  <li><a href="#">Моят профил</a></li>
-					  <li><a href="../Forms/LoginForm/Login_form.php">Излез</a></li>
-					</ul>
-				  </div>';
+					<div class="sub-menu">
+					  <li><a href="MyProfile.php" class="sub-menu-link">
+						     <img src="../images/profile.png">
+								 <p>Моят Профил</p>
+								 <span>></span>
+						</li></a>	
+
+					  <li><a href="#" class="sub-menu-link">
+						<img src="../images/setting.png">
+						<p>Настройки</p>
+						<span>></span>
+			      </a></li>
+
+						<li><a href="../Forms/LoginForm/Login_form.php" class="sub-menu-link">
+						     <img src="../images/logout.png">
+								 <p>Изход</p>
+								 <span>></span>
+						</li></a>						
+				  </ul>
+				  </ul>';
 				}
 			?>
 			<div class="toggle_btn">
@@ -46,7 +62,7 @@
 
 		<div class="dropdown_menu">
 			<li><a href="Home.php">Начало</a></li>
-			<li><a href="#">Дневник</a></li>
+			<li><a href="Journal.php">Дневник</a></li>
 			<li><a href="#">Програма</a></li>
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>
@@ -73,13 +89,13 @@
 						$row = $result->fetch_assoc();
 					
 						echo '<table>';
-						echo '<tr> <th> Subject </th> <th> Grades </th> </tr>';
-						echo '<tr> <td> English </td> <td>' . $row['English'] . '</td></tr>';
-						echo '<tr> <td> Math </td> <td>' . $row['Math'] . '</td></tr>';
-						echo '<tr> <td> Bulgarian </td> <td>' . $row['Bulgarian'] . '</td></tr>';
-						echo '<tr> <td> Programming </td> <td>' . $row['Programming'] . '</td></tr>';
-						echo '<tr> <td> PE </td> <td>' . $row['Physical Education(PE)'] . '</td></tr>';
-						echo '<tr> <td> Music </td> <td>' . $row['Music'] . '</td></tr>';
+						echo '<tr> <td> Номер </td> <th> Предмет </th> <th> Оценки </th>  <th> Отсъствия </th> </tr>';
+						echo '<tr> <td></td> <td> Английски език </td> <td>' . $row['English'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Математика </td> <td>' . $row['Math'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Български език </td> <td>' . $row['Bulgarian'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Програмиране </td> <td>' . $row['Programming'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Музика </td> <td>' . $row['Music'] . '</td> </tr>';
 						echo '</table>';
 						break;
 						
@@ -88,14 +104,14 @@
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
 						
-						echo '<table">';
-						echo '<tr> <th> Предмет </th> <th> Оценки </th> </tr>';
-						echo '<tr> <td> Английски език </td> <td>' . $row['English'] . '</td></tr>';
-						echo '<tr> <td> Математика </td> <td>' . $row['Math'] . '</td></tr>';
-						echo '<tr> <td> България </td> <td>' . $row['Bulgarian'] . '</td></tr>';
-						echo '<tr> <td> Програмиране </td> <td>' . $row['Programming'] . '</td></tr>';
-						echo '<tr> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td></tr>';
-						echo '<tr> <td> Музика </td> <td>' . $row['Music'] . '</td></tr>';
+						echo '<table>';
+						echo '<tr> <td> Номер </td> <th> Предмет </th> <th> Оценки </th>  <th> Отсъствия </th> </tr>';
+						echo '<tr> <td></td> <td> Английски език </td> <td>' . $row['English'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Математика </td> <td>' . $row['Math'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Български език </td> <td>' . $row['Bulgarian'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Програмиране </td> <td>' . $row['Programming'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td> </tr>';
+						echo '<tr> <td></td> <td> Музика </td> <td>' . $row['Music'] . '</td> </tr>';
 						echo '</table>';
 						break;
 						
@@ -109,14 +125,14 @@
 						$result = mysqli_query($connection, $sql);
 						$subject = $row['subject'];
 						echo '<table >';
-						echo '<tr> <th> Student </th> <th> Grades </th> </tr>';
+						echo '<tr> <th> Номер </th> <th> Ученик </th> <th> Оценки </th> <th> Оценяване </th> </tr>';
 						$num = mysqli_num_rows($result);
 						
 						while($num > 0)
 						{
 							$num--;
 							$row = $result->fetch_assoc();
-							echo '<tr> <td>' . $row['name'] . $row['family_name'] . '</td>' . '<td>' . $row[$subject] . '</td> </tr>';
+							echo '<tr> <td></td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>' . $row[$subject] . '</td> <td> <a class="add-grade">2</a><a class="add-grade">3</a><a class="add-grade">4</a><a class="add-grade">5</a><a class="add-grade">6</a></td> </tr>';
 						}
 						
 						echo '</table>';
