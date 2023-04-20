@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="Home.css">
+	<link rel="stylesheet" href="Journal.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<title>Дневник</title>
 </head>
@@ -55,6 +56,9 @@
 	</header>
 
 	<main>
+	<div class="filter">
+
+	</div>
 		<?php
 			include 'db_connection.php';
 			$connection = getDbConnection();
@@ -68,7 +72,7 @@
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
 					
-						echo '<table border=1>';
+						echo '<table>';
 						echo '<tr> <th> Subject </th> <th> Grades </th> </tr>';
 						echo '<tr> <td> English </td> <td>' . $row['English'] . '</td></tr>';
 						echo '<tr> <td> Math </td> <td>' . $row['Math'] . '</td></tr>';
@@ -84,7 +88,7 @@
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
 						
-						echo '<table border=1>';
+						echo '<table">';
 						echo '<tr> <th> Предмет </th> <th> Оценки </th> </tr>';
 						echo '<tr> <td> Английски език </td> <td>' . $row['English'] . '</td></tr>';
 						echo '<tr> <td> Математика </td> <td>' . $row['Math'] . '</td></tr>';
@@ -104,7 +108,7 @@
 						$sql = 'SELECT students.name, students.family_name, students.class, students.' . $row['subject'] . ' FROM students JOIN subjects ON students.class = subjects.class JOIN teachers ON subjects.' . $row['subject'] . ' = teachers.mail WHERE teachers.mail="' . $_SESSION['mail'] . '";';
 						$result = mysqli_query($connection, $sql);
 						$subject = $row['subject'];
-						echo '<table border=1>';
+						echo '<table >';
 						echo '<tr> <th> Student </th> <th> Grades </th> </tr>';
 						$num = mysqli_num_rows($result);
 						
