@@ -18,6 +18,9 @@
 --
 -- Table structure for table `parents`
 --
+DROP DATABASE IF EXISTS `journal_schema`;
+CREATE DATABASE `journal_schema`;
+USE `journal_schema`;
 
 DROP TABLE IF EXISTS `parents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
