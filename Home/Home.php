@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<div class="navbar">
+		<div class="navbar">   .
 			<a href="Home.php"><img src="../images/Project-Logo-2.png" class="logo"></a>
 			<ul class="links">
 				<li><a href="Home.php">Начало</a></li>
