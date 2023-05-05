@@ -115,6 +115,15 @@ header{
   }
 }
 
+@media(max-width: 1036px) {
+  .navbar .logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+  }
+}
+
 @media(min-width: 1036px) {
    .navbar .toggle_btn{
       display: none !important;
@@ -133,6 +142,7 @@ header{
   .dropdown_menu{
       left: 2rem;
       width: unset;
+      margin-top: 2rem;
   }
 }
 .profile-box {
