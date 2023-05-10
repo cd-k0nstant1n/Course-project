@@ -23,15 +23,34 @@
 			</ul>
 			<?php
 				session_start();
-			
+				include 'db_connection.php';
+				$connection = getDbConnection();
+				
 				if (!isset($_SESSION['mail']))
 				{
 					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a>';
 				}
 				else
 				{
+					switch ($_SESSION['role'])
+					{
+						case "student":
+							$sql = 'SELECT name FROM students WHERE mail="' . $_SESSION['mail'] . '";';
+							break;
+							
+						case "parent":
+							$sql = 'SELECT name FROM parents WHERE mail="' . $_SESSION['mail'] . '";';
+							break;
+							
+						case "teacher":
+							$sql = 'SELECT name FROM teachers WHERE mail="' . $_SESSION['mail'] . '";';
+							break;
+					}
+					
+					$result = mysqli_query($connection, $sql);
+					$row = $result->fetch_assoc();
 					echo '<div class="profile-box">
-					<button class="profile-btn">Профил</button>
+					<button class="profile-btn">' . $row['name'] . '</button>
 					<ul class="profile-dropdown">
 					<div class="sub-menu">
 					  <li><a href="MyProfile.php" class="sub-menu-link">
@@ -76,26 +95,23 @@
 
 	</div>
 		<?php
-			include 'db_connection.php';
-			$connection = getDbConnection();
-			
 			if(isset($_SESSION['mail']))
 			{
 				switch ($_SESSION['role'])
 				{
 					case "student":
-						$sql = 'SELECT English, Math, Bulgarian, Programming, `Physical Education(PE)`, Music FROM students WHERE mail="' . $_SESSION['mail'] . '";';
+						$sql = 'SELECT * FROM students WHERE mail="' . $_SESSION['mail'] . '";';
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
 					
 						echo '<table>';
-						echo '<tr> <td> Номер </td> <th> Предмет </th> <th> Оценки </th>  <th> Отсъствия </th> </tr>';
-						echo '<tr> <td></td> <td> Английски език </td> <td>' . $row['English'] . '</td> </tr>';
-						echo '<tr> <td></td> <td> Математика </td> <td>' . $row['Math'] . '</td> </tr>';
-						echo '<tr> <td></td> <td> Български език </td> <td>' . $row['Bulgarian'] . '</td> </tr>';
-						echo '<tr> <td></td> <td> Програмиране </td> <td>' . $row['Programming'] . '</td> </tr>';
-						echo '<tr> <td></td> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td> </tr>';
-						echo '<tr> <td></td> <td> Музика </td> <td>' . $row['Music'] . '</td> </tr>';
+						echo '<tr> <th> Номер </th> <th> Предмет </th> <th> Оценки </th>  <th> Отсъствия </th> </tr>';
+						echo '<tr> <td>1</td> <td> Английски език </td> <td>' . $row['English'] . '</td> <td>' . $row['Absences_english'] . '</td> </tr>';
+						echo '<tr> <td>2</td> <td> Математика </td> <td>' . $row['Math'] . '</td> <td>' . $row['Absences_math'] . '</td> </tr>';
+						echo '<tr> <td>3</td> <td> Български език </td> <td>' . $row['Bulgarian'] . '</td> <td>' . $row['Absences_bulgarian'] . '</td> </tr>';
+						echo '<tr> <td>4</td> <td> Програмиране </td> <td>' . $row['Programming'] . '</td> <td>' . $row['Absences_programming'] . '</td> </tr>';
+						echo '<tr> <td>5</td> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td> <td>' . $row['Absences_pe'] . '</td> </tr>';
+						echo '<tr> <td>6</td> <td> Музика </td> <td>' . $row['Music'] . '</td> <td>' . $row['Absences_music'] . '</td> </tr>';
 						echo '</table>';
 						break;
 						
@@ -127,12 +143,14 @@
 						echo '<table >';
 						echo '<tr> <th> Номер </th> <th> Ученик </th> <th> Оценки </th> <th> Оценяване </th> </tr>';
 						$num = mysqli_num_rows($result);
+						$index = 1;
 						
 						while($num > 0)
 						{
 							$num--;
 							$row = $result->fetch_assoc();
-							echo '<tr> <td></td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>' . $row[$subject] . '</td> <td> <a class="add-grade">2</a><a class="add-grade">3</a><a class="add-grade">4</a><a class="add-grade">5</a><a class="add-grade">6</a></td> </tr>';
+							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>' . $row[$subject] . '</td> <td> <a class="add-grade" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> </tr>';
+							$index++;
 						}
 						
 						echo '</table>';
