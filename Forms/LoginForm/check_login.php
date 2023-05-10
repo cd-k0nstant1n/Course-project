@@ -1,12 +1,6 @@
 <?php
-	$username = "root";
-	$servername = "localhost";
-	$password = "";
-	$dbname = "journal_schema";
-	
-	try
-	{
-		$connection = new mysqli($servername, $username, $password, $dbname);
+
+	include '../../Home/db_connection.php';
 		
 		$mail = $_POST["mail"];
 		$password = $_POST["password"];
@@ -85,11 +79,6 @@
 				}
 			}
 		}
-	}
-	catch(PDOException $e)
-	{
-		echo "Connection failed: " . $e->getMessage();
-	}
 	
 mysqli_close($connection);
 ?>

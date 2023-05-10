@@ -1,12 +1,6 @@
 <?php
-	$username = "root";
-	$servername = "localhost";
-	$password = "";
-	$dbname = "journal_schema";
 	
-	try
-	{
-		$connection = new mysqli($servername, $username, $password, $dbname);
+		include '../../Home/db_connection.php';
 		
 		if($_POST["role"] == "student")
 		{
@@ -104,11 +98,5 @@
 				header("Location: ../LoginForm/Login_form.php");
 			}
 		}
-	}
-	catch(PDOException $e)
-	{
-		echo "Connection failed: " . $e->getMessage();
-	}
-	
-mysqli_close($connection);
+
 ?>
