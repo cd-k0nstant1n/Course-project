@@ -58,7 +58,7 @@
 								 <p>Изход</p>
 								 <span>></span>
 						</li></a>						
-				  </ul>
+			
 				  </ul>';
 				}
 			?>
@@ -68,12 +68,25 @@
 		</div>
 
 		<div class="dropdown_menu">
+			<ul>
 			<li><a href="Home.php">Начало</a></li>
 			<li><a href="Journal.php">Дневник</a></li>
 			<li><a href="#">Програма</a></li>
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>
 			<li><a href="#">За нас</a></li>
-			<li><a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a></li>
+			<li>
+			<?php
+			if (!isset($_SESSION['mail']))
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a>';
+				}
+			else
+				{
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+				}
+			?>
+			</li>
+			</ul>
 		</div>
 	</header>
