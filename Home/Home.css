@@ -7,6 +7,7 @@
 body{
   background-image: url(../images/school-06.jpg);
   height: 100vh;
+  background-repeat: no-repeat;
 }
 
 li{
@@ -51,7 +52,7 @@ header{
   font-size: 2rem;
   cursor: pointer;
   display: none;
-  margin-left: 700px;
+  /* margin-left: 700px; */
 }
 
 .action_btn{
@@ -101,12 +102,6 @@ header{
   justify-content: center;
 }
 
-.dropdown_menu .action_btn{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 @media(max-width: 1036px) {
   .navbar .links,
   .navbar .action_btn , 
@@ -117,7 +112,7 @@ header{
 
 @media(max-width: 1036px) {
   .navbar .logo{
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     margin-top: 0;
@@ -125,7 +120,8 @@ header{
 }
 
 @media(min-width: 1036px) {
-   .navbar .toggle_btn{
+   .navbar .toggle_btn,
+   .dropdown_menu.open{
       display: none !important;
   }
 }
@@ -244,4 +240,31 @@ header{
 
 .sub-menu-link:hover p{
   font-weight: 600;
+}
+.action_btn2{
+  background-color: #4ca75a;
+  color: #fff;
+  padding: 0.7rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2 ease;
+}
+
+.action_btn2:hover{
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn2:active{
+  scale: 0.95;
+}
+
+.dropdown_menu .action_btn2{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

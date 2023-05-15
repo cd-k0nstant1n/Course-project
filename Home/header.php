@@ -79,11 +79,11 @@
 			<?php
 			if (!isset($_SESSION['mail']))
 				{
-					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Влез</a>';
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn2">Влез</a>';
 				}
 			else
 				{
-					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn">Излез</a>';
+					echo '<a href="../Forms/LoginForm/Login_form.php" class="action_btn2">Излез</a>';
 				}
 			?>
 			</li>
