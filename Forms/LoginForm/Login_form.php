@@ -41,9 +41,28 @@
             <div class="two-col">
 
                 <div class="remember-me">
-                    <input type="checkbox" name="" id="check">
+                    <input type="checkbox" name="remember-me" id="check">
                     <label for="check">Запомни ме</label>
                 </div>
+
+                <?php
+                $user = null;
+                if ($user && $user['is_active']) {
+                    // User is valid, so log them in
+                    $_SESSION['student.id'] = $user['id'];
+                    $_SESSION['student.name'] = $user['name'];
+                  
+                    if (isset($_POST['remember_me']) && $_POST['remember_me'] == 'on') {
+                      // Set a persistent cookie for 30 days with the hashed email and password
+                      $cookie_value = password_hash($user['mail'] . $user['password'], PASSWORD_DEFAULT);
+                      setcookie('remember_me', $cookie_value, time() + (30 * 24 * 60 * 60), '/');
+                    }
+                  
+                    // Redirect the user to their dashboard or home page
+                    header("Location: /../Home/Home.php");
+                    exit();
+                  }
+                ?>
 
                 <div class="forgotten-password">
                     <label><a href="ForgottenPassword.html">Забравена парола?</a></label>

@@ -1,0 +1,106 @@
+.container-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  
+}
+.user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-left: 5px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.user-details .input-box{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.user-details .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:rgb(87, 141, 70);
+}
+.user-details .input-box.error input{
+  border-color:red;
+}
+.user-details .input-box.error span.error_pass{
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.user-details .input-box.error #pass1{
+  margin-bottom: 5px;
+}
+
+.button{
+  height: 45px;
+  margin: 35px 0;
+  
+}
+.button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: rgb(87, 141, 70);
+  border: 2px solid rgb(87, 141, 70)
+}
+.button input:hover{
+ background-color: #ffffff;
+ color: rgb(87, 141, 70);
+}
+@media (max-width: 767px) {
+  .container-form {
+    overflow-y: scroll;
+    max-height: 70vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-form {
+    max-width: 768px;
+  }
+  
+  .user-details .input-box {
+    width: calc(50% - 10px);
+  }
+}

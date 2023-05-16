@@ -1,6 +1,6 @@
 <header>
 		<div class="navbar">
-			<img src="../images/Project-Logo-2.png" class="logo">
+			<a href="../Home/Home.php"><img src="../images/Project-Logo-2.png" class="logo"></a>
 			<ul class="links">
 				<li><a href="Home.php">Начало</a></li>
 				<li><a href="Journal.php" >Дневник</a></li>
@@ -46,13 +46,7 @@
 								 <p>Моят Профил</p>
 								 <span>></span>
 						</li></a>	
-
-					  <li><a href="#" class="sub-menu-link">
-						<img src="../images/setting.png">
-						<p>Настройки</p>
-						<span>></span>
-			      </a></li>
-
+						
 						<li><a href="../Forms/LoginForm/Login_form.php" class="sub-menu-link">
 						     <img src="../images/logout.png">
 								 <p>Изход</p>
