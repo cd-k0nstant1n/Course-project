@@ -52,3 +52,17 @@ function yes_check(){
   profileBtn.addEventListener('click', () => {
   profileDropdown.classList.toggle('open');
   });
+
+  const currentPageUrl = window.location.href;
+
+// Get all the tab links
+const tabLinks = document.querySelectorAll('.navbar a');
+
+// Loop through the tab links
+tabLinks.forEach(link => {
+  // Check if the link's href matches the current page URL
+  if (link.href === currentPageUrl) {
+    // Add the active class to the link
+    link.classList.add('active');
+  }
+});

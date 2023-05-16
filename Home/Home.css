@@ -41,6 +41,15 @@ header{
   font-size: 2rem;
   font-weight: bold;  
 }
+.navbar a{
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.navbar a:hover,
+.navbar a:focus,
+.navbar a.active{
+  color: grey;
+} 
 
 .navbar .links{
   display: flex;
@@ -105,8 +114,9 @@ header{
 @media(max-width: 1036px) {
   .navbar .links,
   .navbar .action_btn , 
-  .navbar .profile-btn{
-      display: none ;
+  .navbar .profile-btn,
+  .profile-dropdown.open {
+      display: none !important;
   }
 }
 

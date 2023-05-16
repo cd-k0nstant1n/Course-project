@@ -74,7 +74,6 @@ h3 {
   height: 100%;
   width: 100%;
   border-radius: 5px;
-  
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -103,4 +102,54 @@ h3 {
   .user-details .input-box {
     width: calc(50% - 10px);
   }
+}
+.container-form2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  
+}
+
+@media (max-width: 767px) {
+  .container-form,
+  .container-form2 {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-form {
+    float: left;
+    width: calc(50% - 10px);
+    margin-right: 20px;
+  }
+
+  .container-form2 {
+    float: right;
+    width: calc(50% - 10px);
+    margin-left: 20px;
+  }
+}
+.container-wrapper {
+  display: flex;
+}
+
+.container-form,
+.container-form2 {
+  width: 50%; /* Adjust the width as needed */
+  margin-right: 10px; /* Adjust the margin between the containers */
 }
