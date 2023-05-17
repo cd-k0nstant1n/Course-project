@@ -25,16 +25,23 @@
 						$sql = 'SELECT * FROM students WHERE mail="' . $_SESSION['mail'] . '";';
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
-					
+						
+						echo '<div class="table-container">';
 						echo '<table>';
 						echo '<tr> <th> Номер </th> <th> Предмет </th> <th> Оценки </th>  <th> Отсъствия </th> </tr>';
 						echo '<tr> <td>1</td> <td> Английски език </td> <td>' . $row['English'] . '</td> <td>' . $row['Absences_english'] . '</td> </tr>';
 						echo '<tr> <td>2</td> <td> Математика </td> <td>' . $row['Math'] . '</td> <td>' . $row['Absences_math'] . '</td> </tr>';
 						echo '<tr> <td>3</td> <td> Български език </td> <td>' . $row['Bulgarian'] . '</td> <td>' . $row['Absences_bulgarian'] . '</td> </tr>';
-						echo '<tr> <td>4</td> <td> Програмиране </td> <td>' . $row['Programming'] . '</td> <td>' . $row['Absences_programming'] . '</td> </tr>';
+						echo '<tr> <td>4</td> <td> ООП </td> <td>' . $row['Programming'] . '</td> <td>' . $row['Absences_programming'] . '</td> </tr>';
+						echo '<tr> <td>5</td> <td> Бази данни </td> <td></td> <td></td>';
+						echo '<tr> <td>6</td> <td> Разработка на софтуер </td> <td></td> <td></td>';
+						echo '<tr> <td>7</td> <td> Web програмиране </td> <td></td> <td></td>';
+						echo '<tr> <td>8</td> <td> Вградени системи </td> <td></td> <td></td>';
+						echo '<tr> <td>9</td> <td> МОП </td> <td></td> <td></td>';
 						echo '<tr> <td>5</td> <td> Физическо върпитание и спорт </td> <td>' . $row['Physical Education(PE)'] . '</td> <td>' . $row['Absences_pe'] . '</td> </tr>';
 						echo '<tr> <td>6</td> <td> Музика </td> <td>' . $row['Music'] . '</td> <td>' . $row['Absences_music'] . '</td> </tr>';
 						echo '</table>';
+						echo '</div>';
 						break;
 						
 					case "parent":

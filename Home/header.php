@@ -69,6 +69,7 @@
 			<li><a href="#">Отзиви</a></li>
 			<li><a href="#">Събития</a></li>
 			<li><a href="#">За нас</a></li>
+			<?php echo '<li><a href="MyProfile.php">Моят профил</a></li>' ?>
 			<li>
 			<?php
 			if (!isset($_SESSION['mail']))

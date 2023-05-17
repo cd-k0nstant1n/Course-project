@@ -93,7 +93,7 @@ header{
   top:60px;
   height: 0;
   width: 300px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(76, 167, 90, 0.466)  ;
   backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
@@ -101,7 +101,8 @@ header{
 }
 
 .dropdown_menu.open{
-  height: 360px;
+  height: 430px;
+  z-index: 3;
 }
 
 .dropdown_menu li{
@@ -178,6 +179,7 @@ header{
 }
 
 .profile-dropdown {
+  z-index: 3;
   display: none;
   position: absolute;
   top: 60px;
@@ -186,7 +188,7 @@ header{
   padding: 20px;
   margin: 10px;
   transition:all 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(76, 167, 90, 0.466)  ;
   backdrop-filter: blur(15px);
   overflow: hidden;
   border-radius: 10px;
