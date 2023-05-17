@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 600px;
-  height: auto;
+  height: 75vh;
   background-color: #fff;
   padding: 30px;
   border-radius: 5px;
@@ -53,18 +53,6 @@ h3 {
 .user-details .input-box input:valid{
   border-color:rgb(87, 141, 70);
 }
-.user-details .input-box.error input{
-  border-color:red;
-}
-.user-details .input-box.error span.error_pass{
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-}
-.user-details .input-box.error #pass1{
-  margin-bottom: 5px;
-}
-
 .button{
   height: 45px;
   margin: 35px 0;
