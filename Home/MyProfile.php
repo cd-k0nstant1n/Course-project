@@ -49,6 +49,8 @@
     <input type="tel" name = "phone" placeholder="Въведете телефон" required>
   </div>
   <hr>
+  <h3>Промяна на паролата:</h3>
+  
 <div class="input-box" >
     <span class="details">Настояща парола</span>
     <input type="password"name="password" placeholder="Настояща парола" required>
