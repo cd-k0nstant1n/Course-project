@@ -19,6 +19,7 @@
 
 <h3>Моят Профил:</h3>
 <div class="input-box">
+  <div class="user-details-else"></div>
     <span class="details">Първо име</span>
     <input type="text" id="yes" name="first_name" placeholder="Въведете първо име" required>
   </div>
@@ -27,7 +28,7 @@
     <span class="details">Фамилия</span>
     <input type="text" id="yes" name="family_name" placeholder="Въведете фамилия" required>
   </div>
-<br>
+  
   <div class="input-box">
     <span class="details">Клас</span>
     <input type="text" name = "class" placeholder="Въведете клас" required>
@@ -47,31 +48,25 @@
     <span class="details">Телефонен номер</span>
     <input type="tel" name = "phone" placeholder="Въведете телефон" required>
   </div>
-
-
-<div class="container-form2">
-<div class="user-details">
-
-<h3>Промяна на паролата:</h3>
-
+  <hr>
 <div class="input-box" >
     <span class="details">Настояща парола</span>
     <input type="password"name="password" placeholder="Настояща парола" required>
   </div>
 
   <div class="input-box" >
-    <span class="details">Нова парола</span>
+    <span class="details">Парола</span>
     <input type="password" name = "password" placeholder="Въведете паролата" name="pass" id="pass1" onkeyup="validate()" required>
     <span id="error" style="color:red" class="error_pass"></span>
   </div>
 
-  <div class="input-box" >
+  <div class="input-box-center" >
     <span class="details">Потвърждение на парола</span>
     <input type="password" placeholder="Потвърдете парола" name="pass" id="pass2" onkeyup="validate()" required>
   </div>
-</div>
+  </div>
 
-  <div class="button">
+<div class="button">
     <input type="submit" value="Запазване">
   </div>
 </div>
@@ -82,4 +77,3 @@
 <script src="../scripts.js"></script>
 </body>
 </html>
-
