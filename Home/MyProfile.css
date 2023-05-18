@@ -5,11 +5,10 @@
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 600px;
-  height: 69vh;
+  height: 80vh;
   background-color: #fff;
   padding: 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .user-details{
   display: flex;
@@ -46,39 +45,16 @@ h3 {
   padding-left: 15px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
-  transition: all 0.3s ease;
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
   border-color:rgb(87, 141, 70);
 }
-.button{
-  height: 45px;
-  margin: 35px 0;
-  
-}
-.button input{
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-  
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.5s;
-  background-color: rgb(87, 141, 70);
-  border: 2px solid rgb(87, 141, 70)
-}
-.button input:hover{
- background-color: #ffffff;
- color: rgb(87, 141, 70);
-}
+
 @media (max-width: 767px) {
   .container-form {
     overflow-y: scroll;
-    max-height: 70vh;
+    max-height: 75vh;
   }
   .input-box-center input {
     width: 100%;
@@ -89,7 +65,6 @@ h3 {
     padding-left: 15px;
     border: 1px solid #ccc;
     border-bottom-width: 2px;
-    transition: all 0.3s ease;
     margin-left: 0;
   }
   .input-box-center span{
@@ -102,6 +77,7 @@ h3 {
 @media (min-width: 768px) {
   .container-form {
     max-width: 768px;
+    max-height: 90vh;
   }
   
   .user-details .input-box {
@@ -130,7 +106,6 @@ h3 {
   padding-left: 15px;
   border: 1px solid #ccc;
   border-bottom-width: 2px;
-  transition: all 0.3s ease;
   margin-left: 25%;
   margin-top: 5px;
 }
@@ -147,6 +122,30 @@ h3 {
 }
 
 }
+.button{
+  height: 45px;
+  margin: 35px 0;
+  
+}
+.button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: rgb(87, 141, 70);
+  border: 2px solid rgb(87, 141, 70)
+}
+.button input:hover{
+ background-color: #ffffff;
+ color: rgb(87, 141, 70);
+}
+
 hr {
   height: 8px;
   border-style: solid;
@@ -157,3 +156,4 @@ hr {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+

@@ -6,7 +6,7 @@
 				<li><a href="Journal.php" >Дневник</a></li>
 				<li><a href="../PDF/school_classes.pdf" >Програма</a></li>
 				<li><a href="#">Отзиви</a></li>
-				<li><a href="#">Събития</a></li>
+				<li><a href="Events.php">Събития</a></li>
 				<li><a href="About.php">За нас</a></li>
 			</ul>
 			<?php
@@ -67,8 +67,8 @@
 			<li><a href="Journal.php">Дневник</a></li>
 			<li><a href="../PDF/school_classes.pdf" target="_blank">Програма</a></li>
 			<li><a href="#">Отзиви</a></li>
-			<li><a href="#">Събития</a></li>
-			<li><a href="#">За нас</a></li>
+			<li><a href="Events.php">Събития</a></li>
+			<li><a href="About.php">За нас</a></li>
 			<?php echo '<li><a href="MyProfile.php">Моят профил</a></li>' ?>
 			<li>
 			<?php
