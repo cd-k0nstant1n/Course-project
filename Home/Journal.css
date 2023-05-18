@@ -13,6 +13,7 @@
       width: 90%;
       overflow-x: auto;
       margin: 0 auto;
+      border-radius: 5px;
    } 
    table{
     position: absolute;
