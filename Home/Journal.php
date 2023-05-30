@@ -17,6 +17,16 @@
 
 	</div>
 		<?php
+			function add_grades($number)
+			{
+				$digits = str_split(strval($number));
+
+				foreach ($digits as $digit)
+				{
+					echo '<a class="add-grade">' . $digit . '</a>';
+				}
+			}
+		
 			if(isset($_SESSION['mail']))
 			{
 				switch ($_SESSION['role'])
@@ -78,7 +88,9 @@
 						{
 							$num--;
 							$row = $result->fetch_assoc();
-							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>' . $row[$subject] . '</td> <td> <a class="add-grade" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> </tr>';
+							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>';
+							add_grades($row[$subject]);
+							echo '</td> <td> <a class="add-grade" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> </tr>';
 							$index++;
 						}
 						

@@ -16,7 +16,15 @@
 		$row = $result->fetch_assoc();
 	}
 	
-	$sql = "UPDATE students SET $subject = CONCAT($subject, ',$grade') WHERE mail = '" . $row['mail'] . "';";
+	if($row[$subject] == NULL)
+	{
+		$sql = "UPDATE students SET $subject = '$grade' WHERE mail = '" . $row['mail'] . "';";
+	}
+	else
+	{
+		$sql = "UPDATE students SET $subject = CONCAT($subject, '$grade') WHERE mail = '" . $row['mail'] . "';";
+	}
+	
 	$result = mysqli_query($connection, $sql);
 	header("Location: Journal.php");
 ?>
