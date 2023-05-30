@@ -18,9 +18,6 @@
 --
 -- Table structure for table `parents`
 --
-DROP DATABASE IF EXISTS `journal_schema`;
-CREATE DATABASE `journal_schema`;
-USE `journal_schema`;
 
 DROP TABLE IF EXISTS `parents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -54,15 +51,20 @@ CREATE TABLE `students` (
   `mail` varchar(45) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `Absences_english` int(11) DEFAULT NULL,
+  `Absences_math` int(11) NOT NULL,
+  `Absences_bulgarian` int(11) NOT NULL,
+  `Absences_programming` int(11) NOT NULL,
+  `Absences_pe` int(11) NOT NULL,
+  `Absences_music` int(11) NOT NULL,
   `English` int(11) DEFAULT NULL,
   `Math` int(11) DEFAULT NULL,
   `Bulgarian` int(11) DEFAULT NULL,
   `Programming` int(11) DEFAULT NULL,
   `Physical Education(PE)` int(11) DEFAULT NULL,
   `Music` int(11) DEFAULT NULL,
-  `Absences` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,4 +120,4 @@ CREATE TABLE `teachers` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-31  8:13:15
+-- Dump completed on 2023-05-30 21:31:19
