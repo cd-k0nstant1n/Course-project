@@ -27,6 +27,7 @@
 				}
 			}
 		
+<<<<<<< HEAD
 			function print_grades($number)
 			{
 				$digits = str_split(strval($number));
@@ -42,6 +43,8 @@
 				}
 			}
 		
+=======
+>>>>>>> 856d563bb724700c97a557cfe46b1efd5cbf60bf
 			if(isset($_SESSION['mail']))
 			{
 				switch ($_SESSION['role'])
