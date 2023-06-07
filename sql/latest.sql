@@ -16,11 +16,25 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `events` (
+  `Name` varchar(100) DEFAULT NULL,
+  `Beginning` varchar(100) DEFAULT NULL,
+  `Category` varchar(100) DEFAULT NULL,
+  `Status` varchar(100) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `parents`
 --
-DROP DATABASE IF EXISTS `journal_schema`;
-CREATE DATABASE `journal_schema`;
-USE `journal_schema`;
 
 DROP TABLE IF EXISTS `parents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -54,15 +68,30 @@ CREATE TABLE `students` (
   `mail` varchar(45) DEFAULT NULL,
   `phone` varchar(45) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `Absences_english` int(11) DEFAULT 0,
+  `Absences_math` int(11) NOT NULL DEFAULT 0,
+  `Absences_bulgarian` int(11) NOT NULL DEFAULT 0,
+  `Absences_programming` int(11) NOT NULL DEFAULT 0,
+  `Absences_pe` int(11) NOT NULL DEFAULT 0,
+  `Absences_music` int(11) NOT NULL DEFAULT 0,
   `English` int(11) DEFAULT NULL,
   `Math` int(11) DEFAULT NULL,
   `Bulgarian` int(11) DEFAULT NULL,
   `Programming` int(11) DEFAULT NULL,
   `Physical Education(PE)` int(11) DEFAULT NULL,
   `Music` int(11) DEFAULT NULL,
-  `Absences` int(11) DEFAULT NULL,
+  `Database` int(11) DEFAULT NULL,
+  `Absences_database` int(11) DEFAULT 0,
+  `Software` int(11) DEFAULT NULL,
+  `Absences_software` int(11) DEFAULT 0,
+  `Web` int(11) DEFAULT NULL,
+  `Absences_web` int(11) DEFAULT 0,
+  `Systems` int(11) DEFAULT NULL,
+  `Absences_systems` int(11) DEFAULT 0,
+  `Mop` int(11) DEFAULT NULL,
+  `Absences_mop` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,8 +110,13 @@ CREATE TABLE `subjects` (
   `Programming` varchar(100) DEFAULT NULL,
   `Physical Education(PE)` varchar(100) DEFAULT NULL,
   `Music` varchar(100) DEFAULT NULL,
+  `Database` varchar(100) DEFAULT NULL,
+  `Software` varchar(100) DEFAULT NULL,
+  `Web` varchar(100) DEFAULT NULL,
+  `Systems` varchar(100) DEFAULT NULL,
+  `Mop` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,4 +152,4 @@ CREATE TABLE `teachers` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-31  8:13:15
+-- Dump completed on 2023-06-07  9:28:28
