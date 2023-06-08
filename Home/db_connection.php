@@ -1,7 +1,7 @@
 <?php
 	$username = "root";
 	$servername = "localhost";
-	$password = "1234567890";
+	$password = "";
 	$dbname = "journal_schema";
 	
 	try
@@ -13,9 +13,12 @@
 		echo "Connection failed: " . $e->getMessage();
 	}
 	
-	function getDbConnection()
+	if (!function_exists('getDbConnection'))
 	{
-		global $connection;
-		return $connection;
+		function getDbConnection()
+		{
+			global $connection;
+			return $connection;
+		}
 	}
 ?>
