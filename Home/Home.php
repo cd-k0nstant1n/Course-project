@@ -13,7 +13,7 @@
     <?php	include 'header.php';  ?>
 
 	<main>
-		
+		<?php include 'sliding_cards.html'; ?>
 	</main>
 
 	<?php include 'footer.php'  ?>

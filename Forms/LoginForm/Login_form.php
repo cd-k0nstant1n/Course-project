@@ -65,7 +65,7 @@
                 ?>
 
                 <div class="forgotten-password">
-                    <label><a href="ForgottenPassword.html">Забравена парола?</a></label>
+                    <label><a href="../ForgottenPassword/ForgottenPassword.html">Забравена парола?</a></label>
                 </div>
 
                 <div class="signup_link">
