@@ -44,7 +44,7 @@
 				{
 					echo '<tr>';
 					$row = $result->fetch_assoc();
-					echo '<td>' . $row['id'] . '</td>';
+					echo '<td>' . $i+1 . '</td>';
 					echo '<td>' . $row['Name'] . '</td>';
 					echo '<td>' . $row['Beginning'] . '</td>';
 					echo '<td>' . $row['Category'] . '</td>';
