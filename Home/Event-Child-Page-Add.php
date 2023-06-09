@@ -4,32 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Event-Child-Page.css">
+  <link rel="stylesheet" href="Event-Child-Page-Add.css">
   <title>Добави ред</title>
 </head>
 <?php
 	include 'db_connection.php';
 	$connection = getDbConnection();
 
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	  // Retrieve form inputs
-	  $event = $_POST['event'];
-	  $start = $_POST['event-start'];
-	  $category = $_POST['category'];
-	  $status = $_POST['status'];
-
-	  // Add the new row to the table
-	  $sql = "INSERT INTO events (Name, Beginning, Category, Status) VALUES ('" . $event . "', '" . $start . "', '" . $category . "', '" . $status . "');";
-	  $result = mysqli_query($connection, $sql);
-	  echo '<script>window.opener.updateFirstPage();</script>';
-	  echo "<script>window.close();</script>";
-	  /*echo '<tr>';
-	  echo '<td>' . $event . '</td>';
-	  echo '<td>' . $start . '</td>';
-	  echo '<td>' . $category . '</td>';
-	  echo '<td>' . $status . '</td>';
-	  echo '</tr>';*/
-	}
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form inputs
+    $event = $_POST['event'];
+    $start = $_POST['event-start'];
+    $category = $_POST['category'];
+    $status = $_POST['status'];
+  
+    // Add the new row to the table
+    $sql = "INSERT INTO events (id ,Name, Beginning, Category, Status) VALUES ('" . $id . "','" . $event . "', '" . $start . "', '" . $category . "', '" . $status . "')";
+    $result = mysqli_query($connection, $sql);
+  
+    // Retrieve the auto-generated ID
+    $id = mysqli_insert_id($connection);
+  
+    echo '<script>window.opener.updateFirstPage();</script>';
+    echo "<script>window.close();</script>";
+  }
+  
 ?>
 <body>
   <div class="container">
@@ -40,7 +39,7 @@
   </div>
 
   <div class="input-info">
-    <span class="details">Начало</span>
+    <span class="details">Дата и час</span>
     <input type="text" name="event-start" placeholder="Въведи начало" required>
   </div>
 

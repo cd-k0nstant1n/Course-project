@@ -26,6 +26,7 @@
 	<table id="мyTable">
 		<thead>
 			<tr>
+				<th>Номер</th>
 				<th>Събитиe</th>
 				<th>Начало</th>
 				<th>Категория</th>
@@ -43,6 +44,7 @@
 				{
 					echo '<tr>';
 					$row = $result->fetch_assoc();
+					echo '<td>' . $row['id'] . '</td>';
 					echo '<td>' . $row['Name'] . '</td>';
 					echo '<td>' . $row['Beginning'] . '</td>';
 					echo '<td>' . $row['Category'] . '</td>';
@@ -59,7 +61,15 @@
 
 	<script>
 		function addFunction() {
-  const myWindow = window.open("Event-Child-Page.php", "", "width=500,height=500");
+  const myWindow = window.open("Event-Child-Page-Add.php", "", "width=500,height=500");
+		}
+		
+		function updateFirstPage() {
+			location.reload();
+		}
+
+		function deleteFunction() {
+  const myWindow = window.open("Event-Child-Page-Delete.php", "", "width=500,height=500");
 		}
 		
 		function updateFirstPage() {
