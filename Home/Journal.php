@@ -70,7 +70,7 @@
 						print_grades($row['Programming']);
 						echo '</td> <td>' . $row['Absences_programming'] . '</td> </tr>';
 						echo '<tr> <td>5</td> <td> Бази данни </td> <td>';
-						print_grades($row['Database']);
+						print_grades($row['Data_bases']);
 						echo '</td> <td>' . $row['Absences_database'] . '</td>';
 						echo '<tr> <td>6</td> <td> Разработка на софтуер </td> <td>';
 						print_grades($row['Software']);
@@ -85,7 +85,7 @@
 						print_grades($row['Mop']);
 						echo '</td> <td>' . $row['Absences_mop'] . '</td>';
 						echo '<tr> <td>5</td> <td> Физическо върпитание и спорт </td> <td>';
-						print_grades($row['Physical Education(PE)']);
+						print_grades($row['Physical_Education']);
 						echo '</td> <td>' . $row['Absences_pe'] . '</td> </tr>';
 						echo '<tr> <td>6</td> <td> Музика </td> <td>';
 						print_grades($row['Music']);
@@ -115,7 +115,7 @@
 						print_grades($row['Programming']);
 						echo '</td> <td>' . $row['Absences_programming'] . '</td> </tr>';
 						echo '<tr> <td>5</td> <td> Бази данни </td> <td>';
-						print_grades($row['Database']);
+						print_grades($row['Data_bases']);
 						echo '</td> <td>' . $row['Absences_database'] . '</td>';
 						echo '<tr> <td>6</td> <td> Разработка на софтуер </td> <td>';
 						print_grades($row['Software']);
@@ -130,7 +130,7 @@
 						print_grades($row['Mop']);
 						echo '</td> <td>' . $row['Absences_mop'] . '</td>';
 						echo '<tr> <td>5</td> <td> Физическо върпитание и спорт </td> <td>';
-						print_grades($row['Physical Education(PE)']);
+						print_grades($row['Physical_Education']);
 						echo '</td> <td>' . $row['Absences_pe'] . '</td> </tr>';
 						echo '<tr> <td>6</td> <td> Музика </td> <td>';
 						print_grades($row['Music']);
