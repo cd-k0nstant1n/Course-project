@@ -84,4 +84,31 @@
       border-radius: 0;
     }
   }
-  
+  .add-absence{
+    margin-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-collapse: collapse;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #4ca75a;
+    border-radius: 5px;
+    border: 0px;
+   }
+  .remove-absence{
+    margin-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-collapse: collapse;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    background-color: red;
+    border-radius: 5px;
+    border: 0px;
+  }
