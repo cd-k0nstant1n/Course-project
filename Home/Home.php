@@ -12,8 +12,61 @@
 	
     <?php	include 'header.php';  ?>
 
-	<main>
-		<?php include 'sliding_cards.html'; ?>
+	<main> 
+		<?php 
+		
+		if (!isset($_SESSION['mail'])){
+			include 'sliding_cards.html'; 
+
+			echo "<p>Please login to access all the content!</p>";
+		}else{
+
+			include 'sliding_cards.html'; 
+
+
+			switch ($_SESSION['role']){
+
+				case 'student':
+					$sql = 'SELECT * FROM students WHERE mail="' . $_SESSION['mail'] . '";';
+					$result = mysqli_query($connection, $sql);
+					$row = $result->fetch_assoc();
+
+					echo '<div class="main-down">
+						  	<div class="your-place">
+						  		<p>Твоето класиране във випуска:</p>
+			          	  		<h1 class="big-num">1</h1>
+			          	  		<p>' . $row['name'] . '</p>
+						  		<p> №' . $row['class_number'] .' - '. $row['class'] .'</p>
+			          	  	</div>
+						  	<div class="avg-grade">
+						  		<p>Средноаритметично на твоите оценки:</p> 
+						  		<h1 class="big-num">2</h1>
+						  	</div>
+						  </div> ';
+			  		break;
+
+				case 'parent':
+					$sql = 'SELECT * FROM parents JOIN students ON student_class_number=class_number WHERE parents.mail="' . $_SESSION['mail'] . '";';
+					$result = mysqli_query($connection, $sql);
+					$row = $result->fetch_assoc();
+
+			  		echo '<div class="your-place">
+					      <p>Kласиране на сина/дъщеря ви във випуска:</p>
+			  			  <h1 class="big-num">1</h1>
+			  	          <p>' . $row['name'] . '</p>
+						  <p> №' . $row['class_number'] .' - '. $row['class'] .'</p>
+			  			  </div>';
+					break;
+
+				case 'teacher':
+					
+		
+			}
+		}
+		
+		?>
+
+		
 	</main>
 
 	<?php include 'footer.php'  ?>
