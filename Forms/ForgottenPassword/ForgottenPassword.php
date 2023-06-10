@@ -80,7 +80,13 @@ if (isset($_POST['submit'])) {
 	{
 		$sql = "UPDATE " . $tableName . " SET password = '" . $newpass . "' WHERE mail = '" . $_POST["mail"] . "'";
 		$result = mysqli_query($connection, $sql);
-		header("Location: ../LoginForm/Login_form.php");
+		
+		echo "
+      <script>
+      alert('The email has been sent successfully.');
+	  document.location.href = '../LoginForm/Login_form.php';
+      </script>
+    ";
 	}
   }
 }catch(Exception $e){
