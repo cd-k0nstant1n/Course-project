@@ -47,6 +47,7 @@
 			$mail = mysqli_real_escape_string($connection, $mail);
 			$phone = mysqli_real_escape_string($connection, $phone);
 			$password = mysqli_real_escape_string($connection, $password);
+			$subject = mysqli_real_escape_string($connection, $subject);
 			
 			if(isset($_POST["class_teacher?"]))
 			{
