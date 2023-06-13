@@ -58,8 +58,9 @@
 			  			  </div>';
 					break;
 
-				case 'teacher':
-					
+				case 'admin':
+					//button for generating code
+				break;
 		
 			}
 		}

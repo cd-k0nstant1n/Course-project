@@ -33,6 +33,10 @@
 						case "teacher":
 							$sql = 'SELECT name FROM teachers WHERE mail="' . $_SESSION['mail'] . '";';
 							break;
+							
+						case "admin":
+							$sql = 'SELECT name FROM teachers WHERE mail="' . $_SESSION['mail'] . '";';
+							break;
 					}
 					
 					$result = mysqli_query($connection, $sql);
