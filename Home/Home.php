@@ -53,15 +53,18 @@
 			  			  <h1 class="big-num">1</h1>
 			  	          <p>' . $row['name'] . '</p>
 						  <p> №' . $row['class_number'] .' - '. $row['class'] .'</p>
-			  			  </div>';
+			  			  </div>
+							<div class="avg-grade">
+							<p>Средноаритметично на оценките на сина/дъщеря ви:</p> 
+							<h1 class="big-num">2</h1>
+						  </div>';
+
 					break;
 
 				case 'admin':
 					//button for generating code
-<<<<<<< HEAD
-=======
+
 					echo '<button type="button" class="generate-code">Генериране на код</button>';
->>>>>>> 339d01bf9647dd7b957e6b28732f7c08355831be
 				break;
 		
 			}
