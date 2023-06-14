@@ -23,7 +23,7 @@
 
 			include 'sliding_cards.html'; 
 
-
+			echo '<div class="main-down">';
 			switch ($_SESSION['role']){
 
 				case 'student':
@@ -31,8 +31,7 @@
 					$result = mysqli_query($connection, $sql);
 					$row = $result->fetch_assoc();
 
-					echo '<div class="main-down">
-						  	<div class="your-place">
+					echo '	<div class="your-place">
 						  		<p>Твоето класиране във випуска:</p>
 			          	  		<h1 class="big-num">1</h1>
 			          	  		<p>' . $row['name'] . '</p>
@@ -41,8 +40,7 @@
 						  	<div class="avg-grade">
 						  		<p>Средноаритметично на твоите оценки:</p> 
 						  		<h1 class="big-num">2</h1>
-						  	</div>
-						  </div> ';
+						  	</div>';
 			  		break;
 
 				case 'parent':
@@ -60,6 +58,7 @@
 
 				case 'admin':
 					//button for generating code
+					echo '<button type="button" class="generate-code">Генериране на код</button>';
 				break;
 		
 			}
@@ -67,7 +66,7 @@
 		
 		?>
 
-		
+        </div> 
 	</main>
 
 	<?php include 'footer.php'  ?>
