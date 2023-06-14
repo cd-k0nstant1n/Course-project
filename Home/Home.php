@@ -16,12 +16,12 @@
 		<?php 
 		
 		if (!isset($_SESSION['mail'])){
-			include 'sliding_cards.html'; 
+			include 'sliding_cards.php'; 
 
 			echo "<p>Please login to access all the content!</p>";
 		}else{
 
-			include 'sliding_cards.html'; 
+			include 'sliding_cards.php'; 
 
 
 			switch ($_SESSION['role']){
@@ -58,8 +58,9 @@
 			  			  </div>';
 					break;
 
-				case 'teacher':
-					
+				case 'admin':
+					//button for generating code
+				break;
 		
 			}
 		}

@@ -166,6 +166,50 @@
 						echo '</table>';
 						break;
 						
+					case "admin":
+						//students
+						$sql = "SELECT * FROM students;";
+						$result = mysqli_query($connection, $sql);
+						echo "<table>";
+						echo "<tr><th>Първо име</th><th>Последно име</th><th>Клас</th><th>Номер в класа</th><th>Имейл</th><th>Телефон</th></tr>";
+						
+						for($i = 0; $i < mysqli_num_rows($result); $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr><td>" . $row['name'] . "</td><td>" . $row['family_name'] . "</td><td>" . $row['class'] . "</td><td>" . $row['class_number'] . "</td><td>" . $row['mail'] . "</td><td>" . $row['phone'] . "</td></tr>";
+						}
+						
+						//echo "</table>";
+						
+						//teachers
+						$sql = "SELECT * FROM teachers;";
+						$result = mysqli_query($connection, $sql);
+						//echo "<table>";
+						echo "<tr><th>Първо име</th><th>Последно име</th><th>Имейл</th><th>Телефон</th><th>Предмет</th><th>Класен ръководител</th></tr>";
+						
+						for($i = 0; $i < mysqli_num_rows($result); $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr><td>" . $row['name'] . "</td><td>" . $row['family_name'] . "</td><td>" . $row['mail'] . "</td><td>" . $row['phone'] . "</td><td>" . $row['subject'] . "</td><td>" . $row['class_teacher'] . "</td></tr>";
+						}
+						
+						//echo "</table>";
+						
+						//parents
+						$sql = "SELECT * FROM parents;";
+						$result = mysqli_query($connection, $sql);
+						//echo "<table>";
+						echo "<tr><th>Първо име</th><th>Последно име</th><th>Клас на ученика</th><th>Номер в класа на ученика</th><th>Имейл</th><th>Телефон</th></tr>";
+						
+						for($i = 0; $i < mysqli_num_rows($result); $i++)
+						{
+							$row = $result->fetch_assoc();
+							echo "<tr><td>" . $row['name'] . "</td><td>" . $row['family'] . "</td><td>" . $row['student_class'] . "</td><td>" . $row['student_class_number'] . "</td><td>" . $row['mail'] . "</td><td>" . $row['phone'] . "</td></tr>";
+						}
+						
+						echo "</table>";
+						break;
+						
 					default: break;
 				}
 			}
