@@ -165,6 +165,13 @@
 						
 						echo '</table>';
 						break;
+
+					// case "admin":
+
+					// 	to do table with users display and remove @martiblq1
+
+
+					// 	break;
 						
 					case "admin":
 						//students

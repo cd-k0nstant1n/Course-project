@@ -66,3 +66,19 @@ tabLinks.forEach(link => {
     link.classList.add('active');
   }
 });
+
+		function addFunction() {
+  const myWindow = window.open("Event-Child-Page-Add.php", "", "width=500,height=500");
+		}
+		
+		function updateFirstPage() {
+			location.reload();
+		}
+
+		function deleteFunction() {
+  const myWindow = window.open("Event-Child-Page-Delete.php", "", "width=500,height=500");
+		}
+		
+		function updateFirstPage() {
+			location.reload();
+		}

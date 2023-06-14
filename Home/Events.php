@@ -16,7 +16,7 @@
 	<?php
 		if(isset($_SESSION['mail']))
 		{
-			if($_SESSION['role'] == "teacher")
+			if($_SESSION['role'] == "teacher" || $_SESSION['role'] == "admin")
 			{
 				echo '<button class="delete_button" onclick="deleteFunction()">Изтрий ред</button>';
 				echo '<button class="add_button" onclick="addFunction()">Добави ред</button>';
@@ -59,23 +59,7 @@
 
 <?php include 'footer.php'  ?>
 
-	<script>
-		function addFunction() {
-  const myWindow = window.open("Event-Child-Page-Add.php", "", "width=500,height=500");
-		}
-		
-		function updateFirstPage() {
-			location.reload();
-		}
-
-		function deleteFunction() {
-  const myWindow = window.open("Event-Child-Page-Delete.php", "", "width=500,height=500");
-		}
-		
-		function updateFirstPage() {
-			location.reload();
-		}
-	</script>
+	
 	<script src="../scripts.js"></script>
 </body>
 </html>

@@ -382,6 +382,12 @@ header{
   }
 }
 
+.main-down {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+  justify-content: space-between; /* Align items with space between */
+}
+
 .main-down .your-place {
   height: 342px;
   list-style: none;
@@ -433,4 +439,25 @@ header{
   .your-place {
     width: 100%;
   }
+}
+.generate-code {
+  /* margin-left: 800px;
+  margin-top: 200px;  */
+  position: absolute;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4ca75a;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 400px;
+  height: 50px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 }

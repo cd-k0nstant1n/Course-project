@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 600px;
-  height: 67vh;
+  height: 69vh;
   background-color: #fff;
   padding: 30px;
   border-radius: 5px;
@@ -14,7 +14,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -34,7 +34,7 @@ h3 {
 .user-details .input-box span.details{
   display: block;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 .user-details .input-box input{
   height: 45px;
@@ -54,7 +54,7 @@ h3 {
 @media (max-width: 767px) {
   .container-form {
     overflow-y: scroll;
-    max-height: 75vh;
+    max-height: 69vh;
   }
   .input-box-center input {
     width: 100%;
@@ -78,8 +78,9 @@ h3 {
   .container-form {
     max-width: 768px;
     max-height: 90vh;
+    height: 77vh;
   }
-  
+
   .user-details .input-box {
     width: calc(50% - 10px);
   }
@@ -98,7 +99,7 @@ h3 {
 }
 
 .user-details .input-box-center input{
-  height: 45px;
+  height:45px;
   width: 50%;
   outline: none;
   font-size: 16px;
@@ -107,7 +108,7 @@ h3 {
   border: 1px solid #ccc;
   border-bottom-width: 2px;
   margin-left: 25%;
-  margin-top: 5px;
+  margin-top: 11px;
 }
 
 .input-box-center span{
@@ -122,9 +123,16 @@ h3 {
 }
 
 }
+@media (min-width: 1440px) {
+  .container-form {
+    max-width: 768px;
+    max-height: 90vh;
+    height: 69vh;
+  }
+}
+
 .button{
   height: 45px;
-  margin: 35px 0;
   
 }
 .button input{
