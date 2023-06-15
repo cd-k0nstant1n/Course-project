@@ -64,7 +64,7 @@
 				case 'admin':
 					//button for generating code
 
-					echo '<button type="button" class="generate-code">Генериране на код</button>';
+					echo '<button type="button" class="generate-code"><a href="generate_code.php">Генериране на код</a></button>';
 				break;
 		
 			}

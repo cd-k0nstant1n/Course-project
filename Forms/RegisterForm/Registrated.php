@@ -1,6 +1,10 @@
 <?php
 	
 		include '../../Home/db_connection.php';
+		$code = $_POST["code"];
+		$sql = "SELECT * FROM code;";
+		$result = mysqli_query($connection, $sql);
+		$row = $result->fetch_assoc();
 		
 		if($_POST["role"] == "student")
 		{
@@ -20,15 +24,24 @@
 			$phone = mysqli_real_escape_string($connection, $phone);
 			$password = mysqli_real_escape_string($connection, $password);
 			
-			$sql = "INSERT INTO students (name, family_name, class, class_number, mail, phone, password) VALUES ('$name', '$family_name', '$class', $class_number, '$mail', '$phone', '$password')";
-			
-			if(!mysqli_query($connection, $sql))
+			if($row['Code'] == $code)
 			{
-				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				$sql = "INSERT INTO students (name, family_name, class, class_number, mail, phone, password) VALUES ('$name', '$family_name', '$class', $class_number, '$mail', '$phone', '$password')";
+				
+				if(!mysqli_query($connection, $sql))
+				{
+					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				}
+				else
+				{
+					$sql = "UPDATE code SET Code = '';";
+					mysqli_query($connection, $sql);
+					header("Location: ../LoginForm/Login_form.php");
+				}
 			}
 			else
 			{
-				header("Location: ../LoginForm/Login_form.php");
+				header("Location: ../RegisterForm/RegistrationForm.html");
 			}
 		}
 		else if($_POST["role"] == "teacher")
@@ -61,13 +74,22 @@
 			$class = mysqli_real_escape_string($connection, $class);
 			$sql = "INSERT INTO teachers (name, family_name, mail, phone, password, subject, class_teacher) VALUES ('$name', '$family_name', '$mail', '$phone', '$password', '$subject', '$class')";
 			
-			if(!mysqli_query($connection, $sql))
+			if($row['Code'] == $code)
 			{
-				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				if(!mysqli_query($connection, $sql))
+				{
+					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				}
+				else
+				{
+					$sql = "UPDATE code SET Code = '';";
+					mysqli_query($connection, $sql);
+					header("Location: ../LoginForm/Login_form.php");
+				}
 			}
 			else
 			{
-				header("Location: ../LoginForm/Login_form.php");
+				header("Location: ../RegisterForm/RegistrationForm.html");
 			}
 		}
 		else if($_POST["role"] == "parent")
@@ -90,13 +112,22 @@
 		
 			$sql = "INSERT INTO parents (name, family, student_class, student_class_number, mail, phone, password) VALUES ('$name', '$family', '$student_class', '$student_class_number', '$mail', '$phone', '$password')";
 			
-			if(!mysqli_query($connection, $sql))
+			if($row['Code'] == $code)
 			{
-				echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				if(!mysqli_query($connection, $sql))
+				{
+					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+				}
+				else
+				{
+					$sql = "UPDATE code SET Code = '';";
+					mysqli_query($connection, $sql);
+					header("Location: ../LoginForm/Login_form.php");
+				}
 			}
 			else
 			{
-				header("Location: ../LoginForm/Login_form.php");
+				header("Location: ../RegisterForm/RegistrationForm.html");
 			}
 		}
 
