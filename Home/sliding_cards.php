@@ -12,130 +12,132 @@
 			
 			for($i = 0; $i < mysqli_num_rows($result); $i++)
 			{
+				$num_of_grades = 0;
 				$row = $result->fetch_assoc();
 				$mails[$i] = $row['mail'];
 				$digits = str_split(strval($row['English']));
 				$english = 0;
-				$english = $english + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$english = $english + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$english = $english/sizeof($digits);
+				//$english = $english/sizeof($digits);
 				
 				$digits = str_split(strval($row['Math']));
 				$math = 0;
-				$math = $math + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$math = $math + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$math = $math/sizeof($digits);
+				//$math = $math/sizeof($digits);
 				
 				$digits = str_split(strval($row['Bulgarian']));
 				$bulgarian = 0;
-				$bulgarian = $bulgarian + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$bulgarian = $bulgarian + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$bulgarian = $bulgarian/sizeof($digits);
+				//$bulgarian = $bulgarian/sizeof($digits);
 				
 				$digits = str_split(strval($row['Programming']));
 				$programming = 0;
-				$programming = $programming + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$programming = $programming + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$programming = $programming/sizeof($digits);
+				//$programming = $programming/sizeof($digits);
 				
 				$digits = str_split(strval($row['Physical_Education']));
 				$pe = 0;
-				$pe = $pe + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$pe = $pe + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$pe = $pe/sizeof($digits);
+				//$pe = $pe/sizeof($digits);
 				
 				$digits = str_split(strval($row['Music']));
 				$music = 0;
-				$music = $music + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$music = $music + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$music = $music/sizeof($digits);
+				//$music = $music/sizeof($digits);
 				
 				$digits = str_split(strval($row['Data_bases']));
 				$databases = 0;
-				$databases = $databases + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$databases = $databases + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$databases = $databases/sizeof($digits);
+				//$databases = $databases/sizeof($digits);
 				
 				$digits = str_split(strval($row['Software']));
 				$software = 0;
-				$software = $software + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$software = $software + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$software = $software/sizeof($digits);
+				//$software = $software/sizeof($digits);
 				
 				$digits = str_split(strval($row['Web']));
 				$web = 0;
-				$web = $web + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$web = $web + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$web = $web/sizeof($digits);
+				//$web = $web/sizeof($digits);
 				
 				$digits = str_split(strval($row['Systems']));
 				$systems = 0;
-				$systems = $systems + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$systems = $systems + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$systems = $systems/sizeof($digits);
+				//$systems = $systems/sizeof($digits);
 
 				$digits = str_split(strval($row['Mop']));
 				$mop = 0;
-				$mop = $mop + (int)$digits[0];
 				
-				for($j = 1; $j < sizeof($digits); $j++)
+				for($j = 0; $j < sizeof($digits); $j++)
 				{
 					$mop = $mop + (int)$digits[$j];
+					if((int)$digits[$j] != 0) {$num_of_grades = $num_of_grades + 1;}
 				}
 				
-				$mop = $mop/sizeof($digits);
+				//$mop = $mop/sizeof($digits);
 				
-				$avarage[$i] = ($english + $math + $bulgarian + $programming + $pe + $music + $databases + $software + $web + $systems + $mop)/11;
+				if($num_of_grades > 0) {$avarage[$i] = ($english + $math + $bulgarian + $programming + $pe + $music + $databases + $software + $web + $systems + $mop)/$num_of_grades;}
+				if($num_of_grades == 0) {$avarage[$i] = 0;}
 			}
 			
 			$best = array(-1, -1, -1, -1, -1);
