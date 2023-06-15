@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="Events.css">
 	<link rel="stylesheet" href="Home.css">
-	<title>Document</title>
+	<title>Събития</title>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
 	<?php
 		if(isset($_SESSION['mail']))
 		{
-			if($_SESSION['role'] == "teacher")
+			if($_SESSION['role'] == "teacher" || $_SESSION['role'] == "admin")
 			{
 				echo '<button class="delete_button" onclick="deleteFunction()">Изтрий ред</button>';
 				echo '<button class="add_button" onclick="addFunction()">Добави ред</button>';
@@ -44,7 +44,7 @@
 				{
 					echo '<tr>';
 					$row = $result->fetch_assoc();
-					echo '<td>' . $row['id'] . '</td>';
+					echo '<td>' . $i+1 . '</td>';
 					echo '<td>' . $row['Name'] . '</td>';
 					echo '<td>' . $row['Beginning'] . '</td>';
 					echo '<td>' . $row['Category'] . '</td>';
@@ -59,23 +59,7 @@
 
 <?php include 'footer.php'  ?>
 
-	<script>
-		function addFunction() {
-  const myWindow = window.open("Event-Child-Page-Add.php", "", "width=500,height=500");
-		}
-		
-		function updateFirstPage() {
-			location.reload();
-		}
-
-		function deleteFunction() {
-  const myWindow = window.open("Event-Child-Page-Delete.php", "", "width=500,height=500");
-		}
-		
-		function updateFirstPage() {
-			location.reload();
-		}
-	</script>
+	
 	<script src="../scripts.js"></script>
 </body>
 </html>

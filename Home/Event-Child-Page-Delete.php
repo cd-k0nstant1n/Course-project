@@ -19,32 +19,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $eventId = intval($eventId);
 
   // Delete the row from the table
-  $sqlDelete = "DELETE FROM events WHERE id = " . $eventId;
-  $resultDelete = mysqli_query($connection, $sqlDelete);
+  $sql = "SELECT * FROM events";
+  $result = mysqli_query($connection, $sql);
+  /*$sqlDelete = "DELETE FROM events WHERE id = " . $eventId;
+  $resultDelete = mysqli_query($connection, $sqlDelete);*/
 
-  if ($resultDelete) {
-    // Get the maximum ID from the remaining rows
-    $sqlMaxId = "SELECT MAX(id) FROM events";
-    $resultMaxId = mysqli_query($connection, $sqlMaxId);
-    $maxId = mysqli_fetch_row($resultMaxId)[0];
-
-    // Set the auto-increment value to the maximum ID + 1
-    $sqlResetAutoIncrement = "ALTER TABLE events AUTO_INCREMENT = " . ($maxId + 1);
-    $resultResetAutoIncrement = mysqli_query($connection, $sqlResetAutoIncrement);
-
-    if ($resultResetAutoIncrement) {
-      echo '<script>alert("Row deleted successfully.");</script>';
-      echo '<script>window.opener.updateFirstPage();</script>';
-      echo '<script>window.close();</script>';
-    } else {
-      echo '<script>alert("Failed to reset auto-increment: ' . mysqli_error($connection) . '");</script>';
-    }
-  } else {
-    echo '<script>alert("Failed to delete row: ' . mysqli_error($connection) . '");</script>';
+  for($i = 1; $i <= mysqli_num_rows($result); $i++)
+  {
+	$row = $result->fetch_assoc();
+	  
+	if($i == $eventId)
+	{
+		$sql = "DELETE FROM events WHERE id=" . $row['id'];
+		$result = mysqli_query($connection, $sql);
+		echo '<script>window.opener.updateFirstPage();</script>';
+		echo "<script>window.close();</script>";
+	}
   }
 }
-
-
 ?>
 <body>
   <div class="container">

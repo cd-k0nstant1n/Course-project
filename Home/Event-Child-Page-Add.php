@@ -19,7 +19,7 @@
     $status = $_POST['status'];
   
     // Add the new row to the table
-    $sql = "INSERT INTO events (id ,Name, Beginning, Category, Status) VALUES ('" . $id . "','" . $event . "', '" . $start . "', '" . $category . "', '" . $status . "')";
+    $sql = "INSERT INTO events (Name, Beginning, Category, Status) VALUES ('" . $event . "', '" . $start . "', '" . $category . "', '" . $status . "')";
     $result = mysqli_query($connection, $sql);
   
     // Retrieve the auto-generated ID
@@ -56,6 +56,6 @@
   </form>
 </div>
 
-
+<script src="../scripts.js"></script>
 </body>
 </html>
