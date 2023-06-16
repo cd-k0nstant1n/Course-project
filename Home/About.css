@@ -37,43 +37,213 @@ hr {
   font-size: 15px;
 }
 
-.container-map {
-  position: relative;
-  background-color: black;
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:  rgba(76, 167, 90, 0.466);
+  padding: 25px;
+  box-sizing: border-box;
+  width: 40%;
+  margin-left: 90px;
+  border-radius: 40px;
+  margin-top: 15px;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#map-container {
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 20px;
-  width: 300px;
-  height: 200px;
-  z-index: 9999;
+.map-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .map-text {
-  position: absolute;
-  color: white;
-  font-size: 18px;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px 10px;
-  z-index: 999;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  transition: color 0.3s ease;
 }
 
-@media only screen and (max-width: 768px) {
-  .container-map {
-    padding: 10px;
+.map-iframe {
+  align-items: center;
+  width: 600px;
+  height: 450px;
+  border: 0;
+  transition: opacity 0.3s ease;
+}
+
+.map-container:hover .map-iframe {
+  opacity: 0.8;
+}
+
+.container_all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+  padding: 25px;
+  box-sizing: border-box;
+  width: 40%;
+  margin-right: 90px;
+  border-radius: 40px;
+  margin-top: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  font-family: 'CoolFont', sans-serif;
+  background-color: #ffffffd0;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container-info:hover {
+  transform: scale(1);
+}
+
+.container-info h2 {
+  color:  #4CAF50;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4CAF50;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.container-info p{
+  font-weight: 50;
+  color:  #4CAF50;
+  font-size: 25px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.container-info a {
+  font-weight: 50;
+  color:  #4CAF50;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.container-info a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+}
+
+.container-info a:hover {
+  color: #000000;
+}
+
+.container-info::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.container-info::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #4CAF50;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container_all {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #map-container {
-    margin-top: 20px;
-    margin-left: 0;
+  .map-container,
+  .container-info {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .map-container {
     width: 100%;
-    height: 300px;
   }
 
   .map-text {
-    font-size: 14px;
-    padding: 3px 6px;
+    font-size: 20px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 250px;
+  }
+  .map-iframe{
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container_all {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-container,
+  .container-info {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .map-container {
+    width: 100%;
+  }
+
+  .container-info {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .container_all {
+    justify-content: space-between;
+  }
+
+  .map-container {
+    width: 40%;
+    margin-left: 90px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+  }
+  .container-info {
+    width: 40%;
+    margin-right: 90px;
   }
 }
