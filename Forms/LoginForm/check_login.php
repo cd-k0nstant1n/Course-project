@@ -4,7 +4,7 @@
 		
 		$mail = $_POST["mail"];
 		$password = $_POST["password"];
-		
+		session_start();
 		$sql = "SELECT * FROM students WHERE mail='$mail'";
 		$result = mysqli_query($connection, $sql);
 		
@@ -15,7 +15,6 @@
 			
 			if (password_verify($password, $hashed_password))
 			{
-				session_start();
 				$_SESSION["mail"] = $mail;
 				$_SESSION["role"] = "student";
 				header("Location: ../../Home/Home.php");
@@ -38,7 +37,6 @@
 				
 				if (password_verify($password, $hashed_password))
 				{
-					session_start();
 					$_SESSION["mail"] = $mail;
 					
 					if($mail == "admin@admin.com")
@@ -70,7 +68,6 @@
 					
 					if (password_verify($password, $hashed_password))
 					{
-						session_start();
 						$_SESSION["mail"] = $mail;
 						$_SESSION["role"] = "parent";
 						header("Location: ../../Home/Home.php");

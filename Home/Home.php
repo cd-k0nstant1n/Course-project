@@ -424,7 +424,10 @@
 
 				case 'admin':
 					//button for generating code
-
+					$sql = 'SELECT * FROM code';
+					$result = mysqli_query($connection, $sql);
+					$row = $result->fetch_assoc();
+					echo '<h2>' . $row['Code'] . '<h2>';
 					echo '<button type="button" class="generate-code"><a href="generate_code.php">Генериране на код</a></button>';
 				break;
 		

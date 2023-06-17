@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(isset($_SESSION['error'])) {echo '<p style="text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
+	if(isset($_SESSION["error"])) {echo '<p style="text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
 	session_destroy();
 ?> 
 
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="signup_link">
-                    <a href="../RegisterForm/RegistrationForm.html">Нямаш акаунт?</a>
+                    <a href="../RegisterForm/RegistrationForm.php">Нямаш акаунт?</a>
                 </div>
 
             </div>

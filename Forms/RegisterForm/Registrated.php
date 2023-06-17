@@ -1,5 +1,5 @@
 <?php
-	
+		session_start();
 		include '../../Home/db_connection.php';
 		$code = $_POST["code"];
 		$sql = "SELECT * FROM code;";
@@ -15,33 +15,51 @@
 			$mail = $_POST["mail"];
 			$phone = $_POST["phone"];
 			$password = $_POST["password"];
-			$password = password_hash($password, PASSWORD_BCRYPT);
 			
 			$name = mysqli_real_escape_string($connection, $name);
 			$family_name = mysqli_real_escape_string($connection, $family_name);
 			$class = mysqli_real_escape_string($connection, $class);
 			$mail = mysqli_real_escape_string($connection, $mail);
 			$phone = mysqli_real_escape_string($connection, $phone);
-			$password = mysqli_real_escape_string($connection, $password);
 			
 			if($row['Code'] == $code)
-			{
-				$sql = "INSERT INTO students (name, family_name, class, class_number, mail, phone, password) VALUES ('$name', '$family_name', '$class', $class_number, '$mail', '$phone', '$password')";
+			{	
 				
-				if(!mysqli_query($connection, $sql))
-				{
-					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
-				}
-				else
-				{
-					$sql = "UPDATE code SET Code = '';";
-					mysqli_query($connection, $sql);
-					header("Location: ../LoginForm/Login_form.php");
-				}
+				
+					$sql = "SELECT mail FROM students WHERE mail='" . $mail . "';";
+					
+					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
+					{
+						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						header("Location: ../RegisterForm/RegistrationForm.php");
+					}
+					else
+					{
+						if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $password))
+						{
+							$sql = "UPDATE code SET Code = '';";
+							mysqli_query($connection, $sql);
+							$password = password_hash($password, PASSWORD_BCRYPT);
+							$password = mysqli_real_escape_string($connection, $password);
+							$sql = "INSERT INTO students (name, family_name, class, class_number, mail, phone, password) VALUES ('$name', '$family_name', '$class', $class_number, '$mail', '$phone', '$password')";
+							if(!mysqli_query($connection, $sql))
+							{
+								echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+							}
+							header("Location: ../LoginForm/Login_form.php");
+						}
+						else
+						{
+							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							header("Location: ../RegisterForm/RegistrationForm.php");
+						}
+					}
+				
 			}
 			else
 			{
-				header("Location: ../RegisterForm/RegistrationForm.html");
+				$_SESSION["error"] = "Wrong pass code.";
+				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
 		else if($_POST["role"] == "teacher")
@@ -51,7 +69,6 @@
 			$mail = $_POST["mail"];
 			$phone = $_POST["phone"];
 			$password = $_POST["password"];
-			$password = password_hash($password, PASSWORD_BCRYPT);
 			$subject = $_POST["subject"];
 			
 			$name = mysqli_real_escape_string($connection, $name);
@@ -59,7 +76,6 @@
 			$subject = mysqli_real_escape_string($connection, $subject);
 			$mail = mysqli_real_escape_string($connection, $mail);
 			$phone = mysqli_real_escape_string($connection, $phone);
-			$password = mysqli_real_escape_string($connection, $password);
 			$subject = mysqli_real_escape_string($connection, $subject);
 			
 			if(isset($_POST["class_teacher?"]))
@@ -72,24 +88,44 @@
 			}
 			
 			$class = mysqli_real_escape_string($connection, $class);
-			$sql = "INSERT INTO teachers (name, family_name, mail, phone, password, subject, class_teacher) VALUES ('$name', '$family_name', '$mail', '$phone', '$password', '$subject', '$class')";
 			
 			if($row['Code'] == $code)
 			{
-				if(!mysqli_query($connection, $sql))
-				{
-					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
-				}
-				else
-				{
-					$sql = "UPDATE code SET Code = '';";
-					mysqli_query($connection, $sql);
-					header("Location: ../LoginForm/Login_form.php");
-				}
+				
+					$sql = "SELECT mail FROM teachers WHERE mail='" . $mail . "';";
+					
+					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
+					{
+						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						header("Location: ../RegisterForm/RegistrationForm.php");
+					}
+					else
+					{
+						if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $password))
+						{
+							$sql = "UPDATE code SET Code = '';";
+							mysqli_query($connection, $sql);
+							$password = password_hash($password, PASSWORD_BCRYPT);
+							$password = mysqli_real_escape_string($connection, $password);
+							$sql = "INSERT INTO teachers (name, family_name, mail, phone, password, subject, class_teacher) VALUES ('$name', '$family_name', '$mail', '$phone', '$password', '$subject', '$class')";
+							if(!mysqli_query($connection, $sql))
+							{
+								echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+							}
+							header("Location: ../LoginForm/Login_form.php");
+						}
+						else
+						{
+							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							header("Location: ../RegisterForm/RegistrationForm.php");
+						}
+					}
+				
 			}
 			else
 			{
-				header("Location: ../RegisterForm/RegistrationForm.html");
+				$_SESSION["error"] = "Wrong pass code.";
+				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
 		else if($_POST["role"] == "parent")
@@ -101,33 +137,52 @@
 			$mail = $_POST["mail"];
 			$phone = $_POST["phone"];
 			$password = $_POST["password"];
-			$password = password_hash($password, PASSWORD_BCRYPT);
 			
 			$name = mysqli_real_escape_string($connection, $name);
 			$family = mysqli_real_escape_string($connection, $family);
 			$student_class = mysqli_real_escape_string($connection, $student_class);
 			$mail = mysqli_real_escape_string($connection, $mail);
 			$phone = mysqli_real_escape_string($connection, $phone);
-			$password = mysqli_real_escape_string($connection, $password);
 		
-			$sql = "INSERT INTO parents (name, family, student_class, student_class_number, mail, phone, password) VALUES ('$name', '$family', '$student_class', '$student_class_number', '$mail', '$phone', '$password')";
 			
 			if($row['Code'] == $code)
 			{
-				if(!mysqli_query($connection, $sql))
-				{
-					echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
-				}
-				else
-				{
-					$sql = "UPDATE code SET Code = '';";
-					mysqli_query($connection, $sql);
-					header("Location: ../LoginForm/Login_form.php");
-				}
+				
+				
+					$sql = "SELECT mail FROM parents WHERE mail='" . $mail . "';";
+					
+					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
+					{
+						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						header("Location: ../RegisterForm/RegistrationForm.php");
+					}
+					else
+					{
+						if(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $password))
+						{
+							$sql = "UPDATE code SET Code = '';";
+							mysqli_query($connection, $sql);
+							$password = password_hash($password, PASSWORD_BCRYPT);
+							$password = mysqli_real_escape_string($connection, $password);
+							$sql = "INSERT INTO parents (name, family, student_class, student_class_number, mail, phone, password) VALUES ('$name', '$family', '$student_class', '$student_class_number', '$mail', '$phone', '$password')";
+							if(!mysqli_query($connection, $sql))
+							{
+								echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+							}
+							header("Location: ../LoginForm/Login_form.php");
+						}
+						else
+						{
+							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							header("Location: ../RegisterForm/RegistrationForm.php");
+						}
+					}
+				
 			}
 			else
 			{
-				header("Location: ../RegisterForm/RegistrationForm.html");
+				$_SESSION["error"] = "Wrong pass code.";
+				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
 
