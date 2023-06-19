@@ -427,8 +427,8 @@
 					$sql = 'SELECT * FROM code';
 					$result = mysqli_query($connection, $sql);
 					$row = $result->fetch_assoc();
-					echo '<h2>' . $row['Code'] . '<h2>';
-					echo '<button type="button" class="generate-code"><a href="generate_code.php">Генериране на код</a></button>';
+					echo '<div class="GeneratedCode"><h2>' . $row['Code'] . '<h2><div>';
+					echo '<button type="button" class="generate-code"><a class=Code href="generate_code.php">Генериране на код</button>';
 				break;
 		
 			}

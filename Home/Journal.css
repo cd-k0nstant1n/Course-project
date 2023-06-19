@@ -10,8 +10,8 @@
    } */
     .table-container{
        /*position: relative; */
-      width: 90%;
-      overflow-x: auto;
+      width: 50%;
+      overflow-x: scroll;
       margin: 0 auto;
       border-radius: 5px;
    } 
@@ -28,7 +28,6 @@
     border-radius: 12px 12px 0 0;
     overflow: auto !important;
     margin: 0 auto;
-    
    
    }
    td , th{
@@ -100,6 +99,7 @@
    }
   .remove-absence{
     margin-right: 10px;
+    margin-left: 10px;
     padding-left: 9px;
     padding-right: 9px;
     padding-top: 8px;

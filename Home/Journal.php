@@ -23,7 +23,7 @@
 
 				foreach ($digits as $digit)
 				{
-					echo '<a class="add-grade">' . $digit . '</a>';
+					echo '<a class="add-grade" onclick="delGradeFunction()">' . $digit . '</a>';
 				}
 			}
 		

@@ -82,3 +82,13 @@ tabLinks.forEach(link => {
 		function updateFirstPage() {
 			location.reload();
 		}
+
+    function delGradeFunction(){
+      const myWindow = window.open("Delete-Grade-Page.php", "", "width=500,height=500");
+		}
+		
+		function updateFirstPage() {
+			location.reload();
+		}
+
+    
