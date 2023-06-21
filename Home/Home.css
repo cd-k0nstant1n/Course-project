@@ -495,7 +495,7 @@ header{
     margin-top: 30px;
   }
     .GeneratedCode{
-    margin-left: 50%;
+    margin-left: 34%;
   }
 }
 
@@ -506,6 +506,16 @@ header{
     margin-top: 30px;
   }
   .GeneratedCode{
-    margin-left: 50%;
+    margin-left: 38%;
   }
 }
+
+/* @media screen and (min-width: 1440px) {
+  .generate-code .Code {
+    width: 400px;
+    margin-top: 40px;
+  }
+  .GeneratedCode{
+    margin-left: 41%;
+    margin-top: 7%;
+  } */

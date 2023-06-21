@@ -1,7 +1,5 @@
 <?php
 	session_start();
-	if(isset($_SESSION["error"])) {echo '<p style="text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
-	session_destroy();
 ?> 
 
 <!DOCTYPE html>
@@ -51,7 +49,9 @@
         <div id="Form">
 
         </div>
-         
+        <?php
+	if(isset($_SESSION["error"])) {echo '<p style="text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
+?> 
         <div class="button">
           <input type="submit" value="Регистриране">
         </div>
@@ -66,6 +66,9 @@
     
   </div>
 
+  <?php
+	session_destroy();
+?> 
   <script src="../../scripts.js"></script>
 </body>
 </html>

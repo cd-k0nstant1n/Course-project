@@ -30,7 +30,7 @@
 					
 					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
 					{
-						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						$_SESSION["error"] = "Вече същества акаунт с този имейл.";
 						header("Location: ../RegisterForm/RegistrationForm.php");
 					}
 					else
@@ -50,7 +50,7 @@
 						}
 						else
 						{
-							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							$_SESSION["error"] = "Паролата трябва да съдържа поне една малка буква, една главна буква, една цифра и да е дълга поне 8 знака!";
 							header("Location: ../RegisterForm/RegistrationForm.php");
 						}
 					}
@@ -58,7 +58,7 @@
 			}
 			else
 			{
-				$_SESSION["error"] = "Wrong pass code.";
+				$_SESSION["error"] = "Невалиден код за достъп.";
 				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
@@ -96,7 +96,7 @@
 					
 					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
 					{
-						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						$_SESSION["error"] = "Вече същества акаунт с този имейл.";
 						header("Location: ../RegisterForm/RegistrationForm.php");
 					}
 					else
@@ -116,7 +116,7 @@
 						}
 						else
 						{
-							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							$_SESSION["error"] = "Паролата трябва да съдържа поне една малка буква, една главна буква, една цифра и да е дълга поне 8 знака!";
 							header("Location: ../RegisterForm/RegistrationForm.php");
 						}
 					}
@@ -124,7 +124,7 @@
 			}
 			else
 			{
-				$_SESSION["error"] = "Wrong pass code.";
+				$_SESSION["error"] = "Невалиден код за достъп.";
 				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
@@ -153,7 +153,7 @@
 					
 					if(mysqli_num_rows(mysqli_query($connection, $sql)) > 0)
 					{
-						$_SESSION["error"] = "Acount with this e-mail already exists.";
+						$_SESSION["error"] = "Вече същества акаунт с този имейл.";
 						header("Location: ../RegisterForm/RegistrationForm.php");
 					}
 					else
@@ -173,7 +173,7 @@
 						}
 						else
 						{
-							$_SESSION["error"] = "Password must contain at least one small letter, one capital letter, one digit, and be at least 8 characters long!";
+							$_SESSION["error"] = "Паролата трябва да съдържа поне една малка буква, една главна буква, една цифра и да е дълга поне 8 знака!";
 							header("Location: ../RegisterForm/RegistrationForm.php");
 						}
 					}
@@ -181,7 +181,7 @@
 			}
 			else
 			{
-				$_SESSION["error"] = "Wrong pass code.";
+				$_SESSION["error"] = "Невалиден код за достъп.";
 				header("Location: ../RegisterForm/RegistrationForm.php");
 			}
 		}
