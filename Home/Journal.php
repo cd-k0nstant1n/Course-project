@@ -24,7 +24,29 @@
 
 				foreach ($digits as $digit)
 				{
-					echo '<a class="add-grade" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+					switch($digit)
+					{
+						case 2:
+							echo '<a class="add-grade" style="background-color:red" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+							break;
+						
+						case 3:
+							echo '<a class="add-grade" style="background-color:orange" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+							break;
+							
+						case 4:
+							echo '<a class="add-grade" style="background-color:coral" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+							break;
+							
+						case 5:
+							echo '<a class="add-grade" style="background-color:rgb(50, 169, 219)" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+							break;
+							
+						case 6:
+							echo '<a class="add-grade" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+							break;
+					}
+					
 					$index++;
 				}
 			}
@@ -161,7 +183,7 @@
 							$row = $result->fetch_assoc();
 							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>';
 							add_grades($row[$subject], $row['mail'], $subject);
-							echo '</td> <td> <a class="add-grade" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> <td><a class="add-absence" href="add_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">+</a> ' . $row[$subject . '_absences'] . '<a class="remove-absence" href="remove_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">–</a></td></tr>';
+							echo '</td> <td> <a class="add-grade" style="background-color:red" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" style="background-color:orange" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" style="background-color:coral" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" style="background-color:rgb(50, 169, 219)" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> <td><a class="add-absence" href="add_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">+</a> ' . $row[$subject . '_absences'] . '<a class="remove-absence" href="remove_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">–</a></td></tr>';
 							$index++;
 						}
 						
