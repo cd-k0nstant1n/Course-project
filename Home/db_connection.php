@@ -1,7 +1,7 @@
 <?php
 	$username = "root";
 	$servername = "localhost";
-	$password = "";
+	$password = "1234567890";
 	$dbname = "journal_schema";
 	
 	try

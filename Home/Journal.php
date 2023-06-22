@@ -169,7 +169,7 @@
 						$sql = 'SELECT subject FROM teachers WHERE mail="' . $_SESSION['mail'] . '";';
 						$result = mysqli_query($connection, $sql);
 						$row = $result->fetch_assoc();
-						$sql = 'SELECT students.name, students.family_name, students.class, students.mail, students.' . $row['subject'] . ', students.' . $row['subject'] . "_absences" . ' FROM students JOIN subjects ON students.class = subjects.class JOIN teachers ON subjects.' . $row['subject'] . ' = teachers.mail WHERE teachers.mail="' . $_SESSION['mail'] . '";';
+						$sql = 'SELECT students.name, students.family_name, students.class, students.class_number, students.mail, students.' . $row['subject'] . ', students.' . $row['subject'] . "_absences" . ' FROM students JOIN subjects ON students.class = subjects.class JOIN teachers ON subjects.' . $row['subject'] . ' = teachers.mail WHERE teachers.mail="' . $_SESSION['mail'] . '";';
 						$result = mysqli_query($connection, $sql);
 						$subject = $row['subject'];
 						echo '<table >';
@@ -181,7 +181,7 @@
 						{
 							$num--;
 							$row = $result->fetch_assoc();
-							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>';
+							echo '<tr> <td>' . $row['class'] . $row['class_number'] . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>';
 							add_grades($row[$subject], $row['mail'], $subject);
 							echo '</td> <td> <a class="add-grade" style="background-color:red" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" style="background-color:orange" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" style="background-color:coral" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" style="background-color:rgb(50, 169, 219)" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> <td><a class="add-absence" href="add_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">+</a> ' . $row[$subject . '_absences'] . '<a class="remove-absence" href="remove_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">–</a></td></tr>';
 							$index++;

@@ -13,8 +13,8 @@
       <div class="input-info">
         <span class="details">Наистина ли искате да изтриете оценката?</span>
       </div>
-      <!--<button class="button" onclick="window.location.href='Home.php'">ДА</button>-->
-	  <input type="submit" class="submit" value="Да" id="">
+      <!--<button class="" onclick="window.location.href='Home.php'">ДА</button>-->
+	  <input type="submit" class="button" value="Да" id="">
 	  <button class="button" onclick="CloseWindow()">НЕ</button>
     </form>
   </div>

@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE `events` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(100) DEFAULT NULL,
   `Beginning` varchar(100) DEFAULT NULL,
   `Category` varchar(100) DEFAULT NULL,
   `Status` varchar(100) DEFAULT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 );
 
@@ -18,7 +18,8 @@ CREATE TABLE `parents` (
   `mail` varchar(100) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`student_class`, `student_class_number`) REFERENCES `students` (`class`, `class_number`)
 );
 
 DROP TABLE IF EXISTS `students`;
@@ -52,7 +53,7 @@ CREATE TABLE `students` (
   `Physical_Education` int DEFAULT NULL,
   `Data_bases` varchar(45) DEFAULT NULL,
   `Programming` varchar(45) DEFAULT NULL,
-  `Programming_absences` varchar(100) NOT NULL DEFAULT '0',
+  `Programming_absences` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 );
 
@@ -64,10 +65,27 @@ CREATE TABLE `subjects` (
   `Bulgarian` varchar(100) DEFAULT NULL,
   `Math` varchar(100) DEFAULT NULL,
   `Programming` varchar(100) DEFAULT NULL,
-  `Physical Education(PE)` varchar(100) DEFAULT NULL,
+  `Physical_Education` varchar(100) DEFAULT NULL,
+  `Software` varchar(100) DEFAULT NULL,
+  `Mop` varchar(100) DEFAULT NULL,
+  `Data_bases` varchar(100) DEFAULT NULL,
+  `Web` varchar(100) DEFAULT NULL,
+  `Systems` varchar(100) DEFAULT NULL,
   `Music` varchar(100) DEFAULT NULL,
+  FOREIGN KEY (`class`) REFERENCES `students` (`class`),
+  FOREIGN KEY (`English`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Bulgarian`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Math`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Programming`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Music`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Software`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Web`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Systems`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Mop`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Physical_Education`) REFERENCES `teachers` (`mail`),
+  FOREIGN KEY (`Data_bases`) REFERENCES `teachers` (`mail`),
   PRIMARY KEY (`id`)
-) ;
+);
 
 DROP TABLE IF EXISTS `teachers`;
 CREATE TABLE `teachers` (
@@ -81,3 +99,4 @@ CREATE TABLE `teachers` (
   `class_teacher` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+  

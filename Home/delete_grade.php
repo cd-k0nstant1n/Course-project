@@ -19,7 +19,12 @@
 
 		$new_string .= $digit;
 	}
-			
+	
+	if($new_string=="")
+	{
+		$new_string = "0";
+	}
+
 	$sql = "UPDATE students SET $subject = '$new_string' WHERE mail = '" . $_GET['mail'] . "';";
 	$result = mysqli_query($connection, $sql);
 	echo '<script>window.opener.updateFirstPage();</script>';
