@@ -482,7 +482,7 @@ header{
     width: 300px;
     margin-top: 30px;
   }
-  .GeneratedCode{
+  .GeneratedCode .LoginWarning{
     margin-left: 25%;
     margin-right: 25%;
   }
@@ -494,7 +494,7 @@ header{
     width: 350px;
     margin-top: 30px;
   }
-    .GeneratedCode{
+    .GeneratedCode .LoginWarning{
     margin-left: 34%;
   }
 }
@@ -505,7 +505,7 @@ header{
     width: 400px;
     margin-top: 30px;
   }
-  .GeneratedCode{
+  .GeneratedCode .LoginWarning{
     margin-left: 38%;
   }
 }
@@ -519,3 +519,17 @@ header{
     margin-left: 41%;
     margin-top: 7%;
   } */
+
+
+  .LoginWarning{
+    margin-top: 40px;
+    margin-left: 41%;
+    background-color: rgba(245, 245, 245, 0.897);
+    width: 250px;
+    height: 100px;
+    color: #4ca75a;
+    border: 2px solid #4CAF50;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 35px;
+  }

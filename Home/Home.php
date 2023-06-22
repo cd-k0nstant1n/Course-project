@@ -18,7 +18,7 @@
 		if (!isset($_SESSION['mail'])){
 			include 'sliding_cards.php'; 
 
-			echo "<p>Please login to access all the content!</p>";
+			echo "<div class=LoginWarning><p>Please login to access all the content!</p></div>";
 		}else{
 
 			include 'sliding_cards.php'; 
