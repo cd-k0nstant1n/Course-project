@@ -83,12 +83,44 @@ tabLinks.forEach(link => {
 			location.reload();
 		}
 
-    function delGradeFunction(){
-      const myWindow = window.open("Delete-Grade-Page.php", "", "width=500,height=500");
+    function delGradeFunction(grade, mail, subject){
+      const myWindow = window.open("Delete-Grade-Page.php?grade=" + grade + "&mail=" + mail + "&subject=" + subject,"", "width=500,height=500");
 		}
 		
 		function updateFirstPage() {
 			location.reload();
 		}
+		
+/*function deleteGrade()
+	{
+		<?php
+			include 'db_connection.php';
+			$subject = $_GET['subject'];
+			$sql = "SELECT " . $subject . " FROM students WHERE mail='" . $_GET['mail'] . "';";
+			$result = mysqli_query($connection, $sql);
+			$row = $result->fetch_assoc();
+			$grade_index = (int)$_GET['grade'];
+			$index = 0;
+			$digits = str_split($row[$subject]);
+			$new_string = "";
+			$deleted = false;
+			
+			foreach ($digits as $index => $digit)
+			{
+				if ($index === $grade_index)
+				{
+					continue;
+				}
+
+				$new_string .= $digit;
+			}
+			
+			$sql = "UPDATE students SET $subject = '$new_string' WHERE mail = '" . $_GET['mail'] . "';";
+			$result = mysqli_query($connection, $sql);
+			//echo '<script>window.opener.updateFirstPage();</script>';
+		?>
+		
+		CloseWindow();
+	}*/
 
     

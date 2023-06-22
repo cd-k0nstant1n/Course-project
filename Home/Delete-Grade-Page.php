@@ -9,21 +9,26 @@
 </head>
 <body>
   <div class="container">
+	<form>
       <div class="input-info">
-        <span class="details">Найстина ли искате да изтриете оценката?</span>
+        <span class="details">Наистина ли искате да изтриете оценката?</span>
       </div>
-      <button class="button">ДА</button><button class="button" onclick="CloseWindow()">НЕ</button>
+      <button class="button" onclick="window.location.href='Home.php'">ДА</button><button class="button" onclick="CloseWindow()">НЕ</button>
     </form>
   </div>
 
   <script>
-    function CloseWindow(){
+    function CloseWindow()
+	{
       const myWindow = window.close();
-		}
+	}
 		
-		function updateFirstPage() {
-			location.reload();
-		}
+	function updateFirstPage()
+	{
+		location.reload();
+	}
+		
+	
   </script>
 
 </body>

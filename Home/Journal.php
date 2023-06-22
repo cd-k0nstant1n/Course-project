@@ -17,13 +17,15 @@
 
 	</div>
 		<?php
-			function add_grades($number)
+			function add_grades($number, $mail, $subject)
 			{
+				$index = 0;
 				$digits = str_split(strval($number));
 
 				foreach ($digits as $digit)
 				{
-					echo '<a class="add-grade" onclick="delGradeFunction()">' . $digit . '</a>';
+					echo '<a class="add-grade" onclick="delGradeFunction(' . $index . ',\'' . $mail . '\',\'' . $subject . '\')">' . $digit . '</a>';
+					$index++;
 				}
 			}
 		
@@ -158,7 +160,7 @@
 							$num--;
 							$row = $result->fetch_assoc();
 							echo '<tr> <td>' . $index . '</td> <td>' . $row['name'] . ' ' . $row['family_name'] . '</td>' . '<td>';
-							add_grades($row[$subject]);
+							add_grades($row[$subject], $row['mail'], $subject);
 							echo '</td> <td> <a class="add-grade" href="add_grade.php?name=2&row=' . $index . '">2</a><a class="add-grade" href="add_grade.php?name=3&row=' . $index . '">3</a><a class="add-grade" href="add_grade.php?name=4&row=' . $index . '">4</a><a class="add-grade" href="add_grade.php?name=5&row=' . $index . '">5</a><a class="add-grade" href="add_grade.php?name=6&row=' . $index . '">6</a></td> <td><a class="add-absence" href="add_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">+</a> ' . $row[$subject . '_absences'] . '<a class="remove-absence" href="remove_absence.php?mail=' . $row['mail'] . '&subject=' . $subject . '">–</a></td></tr>';
 							$index++;
 						}
