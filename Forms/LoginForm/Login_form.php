@@ -1,8 +1,6 @@
 <?php
 	session_start();
-	if(isset($_SESSION["error"])) {echo '<p style="text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
-	session_destroy();
-?> 
+	?>
 
 <!DOCTYPE html>
 <html lang="bg">
@@ -32,6 +30,9 @@
                 <input type="Password" class="input" name="password" placeholder="Парола" id="" required>
                 <i class='bx bx-lock-alt'></i>
             </div>
+<?php
+            if(isset($_SESSION["error"])) {echo '<p style="border-radius:8px; border: 3px solid #4ca75a; background-color: #fff; text-align:center; color:red">' . $_SESSION["error"] . '</p>';}
+?> 
                
             <div class="input-field">
                 <input type="submit" class="submit" value="Login" id="">
@@ -76,4 +77,5 @@
         </div>
 
     </div>
+    <?php session_destroy(); ?>
 </body>

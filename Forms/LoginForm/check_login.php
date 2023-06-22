@@ -21,7 +21,7 @@
 			}
 			else
 			{
-				$_SESSION["error"] = "Incorrect username or password. Please try again.";
+				$_SESSION["error"] = "Невалидна парола или имейл. Опитай отново.";
 				header("Location: Login_form.php");
 			}
 		}
@@ -52,7 +52,7 @@
 				}
 				else
 				{
-					$_SESSION["error"] = "Incorrect username or password. Please try again.";
+					$_SESSION["error"] = "Невалидна парола или имейл. Опитай отново";
 					header("Location: Login_form.php");
 				}
 			}
@@ -74,13 +74,13 @@
 					}
 					else
 					{
-						$_SESSION["error"] = "Incorrect username or password. Please try again.";
+						$_SESSION["error"] = "Невалидна парола или имейл. Опитай отново.";
 						header("Location: Login_form.php");
 					}
 				}
 				else
 				{
-					$_SESSION["error"] = "Incorrect username or password. Please try again.";
+					$_SESSION["error"] = "Невалидна парола или имейл. Опитай отново.";
 					header("Location: Login_form.php");
 				}
 			}

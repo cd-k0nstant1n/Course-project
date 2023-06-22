@@ -11,7 +11,7 @@
     .table-container{
        /*position: relative; */
       width: 50%;
-      overflow-x: scroll;
+      overflow-x: auto;
       margin: 0 auto;
       border-radius: 5px;
    } 
